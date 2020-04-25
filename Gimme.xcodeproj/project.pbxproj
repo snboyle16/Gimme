@@ -10,6 +10,7 @@
 		029C302B1E80831D0F30AF26 /* Pods_GimmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */; };
 		A98A49BCCB144603CA4CB74A /* Pods_GimmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */; };
 		C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */; };
+		E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E809FB2454DD8400175345 /* DataClasses.swift */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
 		F756BBC024543FEE00047666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBBF24543FEE00047666 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gimme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.release.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E4E809FB2454DD8400175345 /* DataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = SOURCE_ROOT; };
 		F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		F7FC9B832454932E00904091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4E809FB2454DD8400175345 /* DataClasses.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
 				F7B32AA42454CF61009D349A /* FeedPostTableViewCell.swift in Sources */,
 				F7B32AA22454CBB4009D349A /* FeedViewController.swift in Sources */,
+				E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */,
 				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
