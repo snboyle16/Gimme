@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029C302B1E80831D0F30AF26 /* Pods_GimmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */; };
+		A98A49BCCB144603CA4CB74A /* Pods_GimmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */; };
+		C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBB924543FED00047666 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB824543FED00047666 /* SceneDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
@@ -16,6 +19,7 @@
 		F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F756BBC424543FEE00047666 /* LaunchScreen.storyboard */; };
 		F756BBD124543FEF00047666 /* GimmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBD024543FEF00047666 /* GimmeTests.swift */; };
 		F756BBDC24543FEF00047666 /* GimmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBDB24543FEF00047666 /* GimmeUITests.swift */; };
+		F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F756BBE9245440A400047666 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1780ED9871DD42BF9AC60C52 /* Pods-GimmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.release.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.release.xcconfig"; sourceTree = "<group>"; };
+		34D40E8B8097A743008D6096 /* Pods-Gimme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimme.release.xcconfig"; path = "Target Support Files/Pods-Gimme/Pods-Gimme.release.xcconfig"; sourceTree = "<group>"; };
+		3AE71A2C07E85920EBBAF379 /* Pods-Gimme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gimme.debug.xcconfig"; path = "Target Support Files/Pods-Gimme/Pods-Gimme.debug.xcconfig"; sourceTree = "<group>"; };
+		4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gimme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.release.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F756BBB824543FED00047666 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,9 @@
 		F756BBD724543FEF00047666 /* GimmeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimmeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBDB24543FEF00047666 /* GimmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimmeUITests.swift; sourceTree = "<group>"; };
 		F756BBDD24543FEF00047666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F756BBE9245440A400047666 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98A49BCCB144603CA4CB74A /* Pods_GimmeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +88,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029C302B1E80831D0F30AF26 /* Pods_GimmeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831268274200C5A80A967132 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */,
+				4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */,
+				FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E244CB41BEB349C9BFA49330 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AE71A2C07E85920EBBAF379 /* Pods-Gimme.debug.xcconfig */,
+				34D40E8B8097A743008D6096 /* Pods-Gimme.release.xcconfig */,
+				FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */,
+				1780ED9871DD42BF9AC60C52 /* Pods-GimmeTests.release.xcconfig */,
+				F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */,
+				5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F756BBAA24543FED00047666 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +126,8 @@
 				F756BBCF24543FEF00047666 /* GimmeTests */,
 				F756BBDA24543FEF00047666 /* GimmeUITests */,
 				F756BBB424543FED00047666 /* Products */,
+				E244CB41BEB349C9BFA49330 /* Pods */,
+				831268274200C5A80A967132 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +150,7 @@
 				F756BBBF24543FEE00047666 /* Assets.xcassets */,
 				F756BBC424543FEE00047666 /* LaunchScreen.storyboard */,
 				F756BBC724543FEE00047666 /* Info.plist */,
+				F756BBE9245440A400047666 /* GoogleService-Info.plist */,
 				F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */,
 				F756BBC124543FEE00047666 /* Preview Content */,
 			);
@@ -146,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F756BBE024543FEF00047666 /* Build configuration list for PBXNativeTarget "Gimme" */;
 			buildPhases = (
+				1C5961FE222F9885BA37B549 /* [CP] Check Pods Manifest.lock */,
 				F756BBAF24543FED00047666 /* Sources */,
 				F756BBB024543FED00047666 /* Frameworks */,
 				F756BBB124543FED00047666 /* Resources */,
+				9CF11738C31404541E1A41C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F756BBE324543FEF00047666 /* Build configuration list for PBXNativeTarget "GimmeTests" */;
 			buildPhases = (
+				D4F1C6DC65A5737577717C1B /* [CP] Check Pods Manifest.lock */,
 				F756BBC824543FEF00047666 /* Sources */,
 				F756BBC924543FEF00047666 /* Frameworks */,
 				F756BBCA24543FEF00047666 /* Resources */,
@@ -181,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F756BBE624543FEF00047666 /* Build configuration list for PBXNativeTarget "GimmeUITests" */;
 			buildPhases = (
+				0E366546DF1875681D158185 /* [CP] Check Pods Manifest.lock */,
 				F756BBD324543FEF00047666 /* Sources */,
 				F756BBD424543FEF00047666 /* Frameworks */,
 				F756BBD524543FEF00047666 /* Resources */,
@@ -244,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */,
+				F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */,
 				F756BBC324543FEE00047666 /* Preview Assets.xcassets in Resources */,
 				F756BBC024543FEE00047666 /* Assets.xcassets in Resources */,
 			);
@@ -264,6 +313,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E366546DF1875681D158185 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GimmeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C5961FE222F9885BA37B549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gimme-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF11738C31404541E1A41C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gimme/Pods-Gimme-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gimme/Pods-Gimme-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gimme/Pods-Gimme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4F1C6DC65A5737577717C1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GimmeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F756BBAF24543FED00047666 /* Sources */ = {
@@ -436,6 +571,7 @@
 		};
 		F756BBE124543FEF00047666 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AE71A2C07E85920EBBAF379 /* Pods-Gimme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +592,7 @@
 		};
 		F756BBE224543FEF00047666 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34D40E8B8097A743008D6096 /* Pods-Gimme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +613,7 @@
 		};
 		F756BBE424543FEF00047666 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +636,7 @@
 		};
 		F756BBE524543FEF00047666 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1780ED9871DD42BF9AC60C52 /* Pods-GimmeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +659,7 @@
 		};
 		F756BBE724543FEF00047666 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +680,7 @@
 		};
 		F756BBE824543FEF00047666 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
