@@ -1,5 +1,5 @@
 //
-//  LandingViewController.swift
+//  LoginViewController.swift
 //  Gimme
 //
 //  Created by Stephen Boyle on 4/25/20.
@@ -8,26 +8,15 @@
 
 import UIKit
 
-class LandingViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here")
+
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signUpPressed(_ sender: Any) {
-//        navigationController?.pushViewController(SignUpViewController(), animated: true)
-    }
-    
-    
-    @IBAction func loginPressed(_ sender: Any) {
-//        navigationController?.pushViewController(LoginViewController(), animated: true)
-    }
-    
-    
-    
-    
+
     /*
     // MARK: - Navigation
 

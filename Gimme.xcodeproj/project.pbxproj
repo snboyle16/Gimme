@@ -12,7 +12,6 @@
 		C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
-		F756BBBE24543FED00047666 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBD24543FED00047666 /* ContentView.swift */; };
 		F756BBC024543FEE00047666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBBF24543FEE00047666 /* Assets.xcassets */; };
 		F756BBC324543FEE00047666 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBC224543FEE00047666 /* Preview Assets.xcassets */; };
 		F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F756BBC424543FEE00047666 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,8 @@
 		F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F756BBE9245440A400047666 /* GoogleService-Info.plist */; };
 		F7B32A9A2454983D009D349A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B32A992454983D009D349A /* Main.storyboard */; };
 		F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9B2454A29A009D349A /* LandingViewController.swift */; };
+		F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9D2454B05A009D349A /* SignUpViewController.swift */; };
+		F7B32AA02454B071009D349A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9F2454B071009D349A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,6 @@
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F756BBBB24543FED00047666 /* Gimme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gimme.xcdatamodel; sourceTree = "<group>"; };
-		F756BBBD24543FED00047666 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F756BBBF24543FEE00047666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F756BBC224543FEE00047666 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F756BBC524543FEE00047666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		F756BBE9245440A400047666 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B32A992454983D009D349A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7B32A9B2454A29A009D349A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		F7B32A9D2454B05A009D349A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F7B32A9F2454B071009D349A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -147,11 +149,10 @@
 			children = (
 				F7FC9B832454932E00904091 /* Model */,
 				F756BBB624543FED00047666 /* AppDelegate.swift */,
-				F756BBBD24543FED00047666 /* ContentView.swift */,
+				F7B32A992454983D009D349A /* Main.storyboard */,
 				F7FC9B842454933D00904091 /* ViewController */,
 				F756BBBF24543FEE00047666 /* Assets.xcassets */,
 				F756BBC424543FEE00047666 /* LaunchScreen.storyboard */,
-				F7B32A992454983D009D349A /* Main.storyboard */,
 				F756BBC724543FEE00047666 /* Info.plist */,
 				F756BBE9245440A400047666 /* GoogleService-Info.plist */,
 				F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */,
@@ -197,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				F7B32A9B2454A29A009D349A /* LandingViewController.swift */,
+				F7B32A9F2454B071009D349A /* LoginViewController.swift */,
+				F7B32A9D2454B05A009D349A /* SignUpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -424,10 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B32AA02454B071009D349A /* LoginViewController.swift in Sources */,
 				F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */,
 				F756BBB724543FED00047666 /* AppDelegate.swift in Sources */,
-				F756BBBE24543FED00047666 /* ContentView.swift in Sources */,
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
+				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
