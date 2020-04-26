@@ -21,7 +21,7 @@ class User {
     var name: String
     var email: String
     var profilePic: UIImage?
-    var feedData: FeedData
+//    var feedData: FeedData
     var giveaways: [String]
     var gimmes: [String]
     var following: [String]
@@ -38,7 +38,7 @@ class User {
         gimmes = []
         following = []
         followers = []
-        feedData = FeedData()
+//        feedData = FeedData()
         userID = UUID.init().uuidString
         addTodb()
         userRef = db.collection("users").document(userID)
@@ -47,7 +47,7 @@ class User {
     func addGiveaway(giveawayID: String)  {
         giveaways.append(giveawayID)
         //update database
-        userRef.updateData([
+        userRef?.updateData([
             "giveaways": FieldValue.arrayUnion([giveawayID])
         ])
     }
@@ -55,7 +55,7 @@ class User {
     func addGimme (giveawayID: String) {
         gimmes.append(giveawayID)
         //update database
-        userRef.updateData([
+        userRef?.updateData([
             "gimmes": FieldValue.arrayUnion([giveawayID])
         ])
     }
@@ -65,7 +65,7 @@ class User {
     func follow(userID: String) {
         followers.append(userID)
         //update database
-        userRef.updateData([
+        userRef?.updateData([
             "following": FieldValue.arrayUnion([userID])
         ])
         
@@ -74,13 +74,12 @@ class User {
     func getfollowed(userID: String) {
         following.append(userID)
         //update database
-        userRef.updateData([
+        userRef?.updateData([
             "followers": FieldValue.arrayUnion([userID])
         ])
     }
     
     func addTodb() {
-        var ref: DocumentReference? = nil
         let userData = [
             "username": username,
             "name": name,
@@ -89,8 +88,8 @@ class User {
             "gimmes": gimmes,
             "following": following,
             "followers": followers
-        ]
-        ref = db.collection("users").document(userID).setData(userData)
+            ] as [String : Any]
+        db.collection("users").document(userID).setData(userData)
         {err in
             if let err = err {
                 print("Error adding user: \(err)")
@@ -131,11 +130,11 @@ class Giveaway {
     }
     
     func addJoinedUser(user: User) {
-        joinedUsers.append(user)
+        joinedUsers.append(user.username)
     }
     
     func addLikedUser(user: User) {
-        likedUsers.append(user)
+        likedUsers.append(user.username)
     }
     
     func addComment(comment: Comment) {
@@ -152,7 +151,6 @@ class Giveaway {
     }
     
     func addTodb() {
-        var ref: DocumentReference? = nil
         let giveawayData = [
             "userID": userID,
             "postedTime": Timestamp(date: postedTime),
@@ -164,8 +162,8 @@ class Giveaway {
             "likedUsers": likedUsers,
             //"comments": comments, //need to be fixed
             "winners": winners
-        ]
-        ref = db.collection("giveaways").document(giveawayID).setData(giveawayData)
+            ] as [String : Any]
+        db.collection("giveaways").document(giveawayID).setData(giveawayData)
             {err in
             if let err = err {
                 print("Error adding user: \(err)")
@@ -178,40 +176,40 @@ class Giveaway {
 }
 
 struct Comment {
-    var username: user
+    var username: String
     var commentText: String
     var commentDate: Date
     var numberOfLikes: Int
 }
 
-class FeedData {
-    var user: User
-    var giveaways: [Giveaway]
-    
-    
-    init() {
-        giveaways = []
-        updateFeed()
-    }
-    
-    func updateFeed() {
-        //pull the data from database
-        
-        for user in user.following {
-            //pull the data from data base
-            for giveaway in user.giveaways {
-                if !giveaway.isExpired() {
-                    giveaways.append(giveaway)
-                }
-            }
-        }
-        sortGiveaways()
-    }
-    
-    func sortGiveaways () {
-        giveaways.sorted(by: { $0.postedTime > $1.postedTime})
-    }
-}
+//class FeedData {
+//    var user: User
+//    var giveaways: [Giveaway]
+//
+//
+//    init() {
+//        giveaways = []
+//        updateFeed()
+//    }
+//
+//    func updateFeed() {
+//        //pull the data from database
+//
+//        for user in user.following {
+//            //pull the data from data base
+//            for giveaway in User.giveaways {
+//                if !giveaway.isExpired() {
+//                    giveaways.append(giveaway)
+//                }
+//            }
+//        }
+//        sortGiveaways()
+//    }
+//
+//    func sortGiveaways () {
+//        giveaways.sorted(by: { $0.postedTime > $1.postedTime})
+//    }
+//}
 
 
 // Update one field, creating the document if it does not exist.
