@@ -50,12 +50,17 @@ class LoginViewController: UIViewController {
         usernameTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         usernameTF.font = UIFont(name: "Avenir-Roman", size: 20)
         usernameTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameTF.clipsToBounds = true
+        usernameTF.layer.cornerRadius = 10.0
         
         passwordTF.layer.borderWidth = 1.0
         passwordTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
         passwordTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         passwordTF.font = UIFont(name: "Avenir-Roman", size: 20)
         passwordTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordTF.clipsToBounds = true
+        passwordTF.layer.cornerRadius = 10.0
+        
     }
     
     @IBAction func loginPressed(_ sender: Any) {

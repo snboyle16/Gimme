@@ -37,18 +37,24 @@ class SignUpViewController: UIViewController {
         emailTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         emailTF.font = UIFont(name: "Avenir-Roman", size: 20)
         emailTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        emailTF.clipsToBounds = true
+        emailTF.layer.cornerRadius = 10.0
         
         usernameTF.layer.borderWidth = 1.0
         usernameTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
         usernameTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         usernameTF.font = UIFont(name: "Avenir-Roman", size: 20)
         usernameTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameTF.clipsToBounds = true
+        usernameTF.layer.cornerRadius = 10.0
         
         passwordTF.layer.borderWidth = 1.0
         passwordTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
         passwordTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         passwordTF.font = UIFont(name: "Avenir-Roman", size: 20)
         passwordTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordTF.clipsToBounds = true
+        passwordTF.layer.cornerRadius = 10.0
         
         signinButton.frame = CGRect(x: 0, y: 0, width: 235, height: 75)
         signinButton.backgroundColor = .white
@@ -74,6 +80,7 @@ class SignUpViewController: UIViewController {
         if let email = emailTF.text, let password = passwordTF.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 
+                
             }
         }
         
@@ -97,4 +104,46 @@ class SignUpViewController: UIViewController {
     }
     */
 
+}
+
+class PaypalViewController: UIViewController {
+    
+    
+    @IBOutlet weak var PaypalImage: UIImageView!
+    @IBOutlet weak var paypalMeLabel: UILabel!
+    @IBOutlet weak var paypalMeTF: UITextField!
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+    //        navigationController?.setNavigationBarHidden(false, animated: true)
+            navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+            // Do any additional setup after loading the view.
+            paypalMeTF.layer.borderWidth = 1.0
+            paypalMeTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
+            paypalMeTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+            paypalMeTF.font = UIFont(name: "Avenir-Roman", size: 20)
+            paypalMeTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+            paypalMeTF.clipsToBounds = true
+            paypalMeTF.layer.cornerRadius = 10.0
+        
+        
+            paypalMeLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+            paypalMeLabel.font = UIFont(name: "Avenir-Roman", size: 18)
+        }
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               // Get the new view controller using segue.destination.
+               // Pass the selected object to the new view controller.
+        }
+        
+        /*
+        // MARK: - Navigation
+
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+        }
+        */
 }

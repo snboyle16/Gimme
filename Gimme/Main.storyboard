@@ -207,6 +207,58 @@
             </objects>
             <point key="canvasLocation" x="1575" y="2559"/>
         </scene>
+        <!--Paypal View Controller-->
+        <scene sceneID="fV5-Uf-mec">
+            <objects>
+                <viewController id="zAA-5U-yCR" customClass="PaypalViewController" customModule="Gimme" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3bb-es-PMc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-gF-rWt">
+                                <rect key="frame" x="37" y="277" width="340" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ft5-Ot-9rp"/>
+                                    <constraint firstAttribute="width" constant="340" id="XhH-8L-nT2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="fht-DK-max"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-54-gYr">
+                                <rect key="frame" x="37.5" y="74" width="350" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="bEe-4c-emC"/>
+                                    <constraint firstAttribute="height" constant="150" id="qx3-TN-kD8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paypal.me Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKw-4Z-LTs">
+                                <rect key="frame" x="37" y="248" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FKw-4Z-LTs" firstAttribute="leading" secondItem="b4C-qU-fKg" secondAttribute="leading" constant="37" id="J41-Nd-gFV"/>
+                            <constraint firstItem="Qid-54-gYr" firstAttribute="top" secondItem="b4C-qU-fKg" secondAttribute="top" constant="30" id="RtV-vD-neV"/>
+                            <constraint firstItem="FKw-4Z-LTs" firstAttribute="top" secondItem="Qid-54-gYr" secondAttribute="bottom" constant="24" id="XNT-DA-Jng"/>
+                            <constraint firstItem="vXv-gF-rWt" firstAttribute="top" secondItem="FKw-4Z-LTs" secondAttribute="bottom" constant="8" id="jG6-yJ-6Cb"/>
+                            <constraint firstItem="vXv-gF-rWt" firstAttribute="centerX" secondItem="b4C-qU-fKg" secondAttribute="centerX" id="lwT-jf-gJb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b4C-qU-fKg"/>
+                    </view>
+                    <connections>
+                        <outlet property="PaypalImage" destination="Qid-54-gYr" id="btB-5Z-RtW"/>
+                        <outlet property="paypalMeLabel" destination="FKw-4Z-LTs" id="CrS-M2-hKO"/>
+                        <outlet property="paypalMeTF" destination="vXv-gF-rWt" id="ckA-Ph-C9P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7b-jk-J5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="1092"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="VxX-Oa-qrC">
             <objects>
@@ -372,8 +424,8 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-Up-oVI">
-                                <rect key="frame" x="261.5" y="194" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="261.5" y="194" width="72" height="30"/>
+                                <state key="normal" title="add image"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VXK-qb-i3l">
                                 <rect key="frame" x="37" y="260" width="340" height="137"/>
@@ -393,7 +445,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGQ-92-vGr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGQ-92-vGr">
                                 <rect key="frame" x="154.5" y="748" width="105" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="MXt-Ct-tfG"/>
@@ -412,7 +464,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTm-tC-M98">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTm-tC-M98">
                                 <rect key="frame" x="102.5" y="643" width="209" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Zig-b6-Tao"/>
@@ -422,8 +474,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-a0-lzB">
-                                <rect key="frame" x="338" y="767" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="353" y="767" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gXl-El-GzV">
                                 <rect key="frame" x="15" y="435" width="384" height="150"/>
@@ -432,7 +484,7 @@
                                 </constraints>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Winners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fW0-y7-eZj">
-                                <rect key="frame" x="133" y="719" width="149" height="21"/>
+                                <rect key="frame" x="132.5" y="719" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -466,6 +518,18 @@
                         <viewLayoutGuide key="safeArea" id="IZa-ks-Vp3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="LFq-Uv-miO"/>
+                    <connections>
+                        <outlet property="addButton" destination="0Pg-Up-oVI" id="19p-OQ-au4"/>
+                        <outlet property="amountLabel" destination="C3T-1M-TU1" id="FCY-yL-hOa"/>
+                        <outlet property="amountofMoneyTF" destination="FTm-tC-M98" id="1ES-V7-3Bh"/>
+                        <outlet property="descriptionLabel" destination="LsO-wb-gQG" id="6gw-eh-0OL"/>
+                        <outlet property="descriptionTV" destination="VXK-qb-i3l" id="NJ9-9Z-4a0"/>
+                        <outlet property="endOfGiveaway" destination="gXl-El-GzV" id="W6h-HZ-ztB"/>
+                        <outlet property="importImage" destination="qje-cI-uOm" id="dKu-J3-QAa"/>
+                        <outlet property="numOfWinnersLabel" destination="fW0-y7-eZj" id="YHE-qa-mz1"/>
+                        <outlet property="numWinnersTF" destination="cGQ-92-vGr" id="Qje-GY-gE4"/>
+                        <outlet property="postButton" destination="I1u-a0-lzB" id="x8f-gk-pmF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ry9-wv-xUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
