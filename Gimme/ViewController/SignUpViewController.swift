@@ -112,6 +112,7 @@ class PaypalViewController: UIViewController {
     @IBOutlet weak var PaypalImage: UIImageView!
     @IBOutlet weak var paypalMeLabel: UILabel!
     @IBOutlet weak var paypalMeTF: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -130,6 +131,13 @@ class PaypalViewController: UIViewController {
         
             paypalMeLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
             paypalMeLabel.font = UIFont(name: "Avenir-Roman", size: 18)
+        
+            continueButton.frame = CGRect(x: 0, y: 0, width: 235, height: 75)
+            continueButton.backgroundColor = .white
+            continueButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+            continueButton.layer.cornerRadius = 35
+            continueButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
+            continueButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 36)
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

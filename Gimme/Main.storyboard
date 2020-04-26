@@ -216,7 +216,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-gF-rWt">
-                                <rect key="frame" x="37" y="277" width="340" height="60"/>
+                                <rect key="frame" x="37" y="321" width="340" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ft5-Ot-9rp"/>
                                     <constraint firstAttribute="width" constant="340" id="XhH-8L-nT2"/>
@@ -226,22 +226,37 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-54-gYr">
-                                <rect key="frame" x="37.5" y="74" width="350" height="150"/>
+                                <rect key="frame" x="37.5" y="118" width="350" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="bEe-4c-emC"/>
                                     <constraint firstAttribute="height" constant="150" id="qx3-TN-kD8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paypal.me Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKw-4Z-LTs">
-                                <rect key="frame" x="37" y="248" width="115" height="21"/>
+                                <rect key="frame" x="37" y="292" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-81-a21">
+                                <rect key="frame" x="89.5" y="411" width="235" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="GKd-FT-IkS"/>
+                                    <constraint firstAttribute="width" constant="235" id="caX-0b-224"/>
+                                </constraints>
+                                <state key="normal" title="continue"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NAx-ap-sTX"/>
+                                    <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="ES2-GZ-PVa"/>
+                                    <segue destination="qIo-xX-rqn" kind="push" id="Xt6-D5-ptu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="rUc-81-a21" firstAttribute="top" secondItem="vXv-gF-rWt" secondAttribute="bottom" constant="30" id="9jN-im-WJ4"/>
                             <constraint firstItem="FKw-4Z-LTs" firstAttribute="leading" secondItem="b4C-qU-fKg" secondAttribute="leading" constant="37" id="J41-Nd-gFV"/>
+                            <constraint firstItem="rUc-81-a21" firstAttribute="centerX" secondItem="b4C-qU-fKg" secondAttribute="centerX" id="MMw-gO-CKH"/>
                             <constraint firstItem="Qid-54-gYr" firstAttribute="top" secondItem="b4C-qU-fKg" secondAttribute="top" constant="30" id="RtV-vD-neV"/>
                             <constraint firstItem="FKw-4Z-LTs" firstAttribute="top" secondItem="Qid-54-gYr" secondAttribute="bottom" constant="24" id="XNT-DA-Jng"/>
                             <constraint firstItem="vXv-gF-rWt" firstAttribute="top" secondItem="FKw-4Z-LTs" secondAttribute="bottom" constant="8" id="jG6-yJ-6Cb"/>
@@ -249,8 +264,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b4C-qU-fKg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TW3-jB-6r5"/>
                     <connections>
                         <outlet property="PaypalImage" destination="Qid-54-gYr" id="btB-5Z-RtW"/>
+                        <outlet property="continueButton" destination="rUc-81-a21" id="Iuh-Vw-a3m"/>
                         <outlet property="paypalMeLabel" destination="FKw-4Z-LTs" id="CrS-M2-hKO"/>
                         <outlet property="paypalMeTF" destination="vXv-gF-rWt" id="ckA-Ph-C9P"/>
                     </connections>
@@ -325,6 +342,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NNm-so-kWc"/>
                                     <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="QwS-NQ-Ybf"/>
+                                    <segue destination="zAA-5U-yCR" kind="push" id="c2Q-bQ-tJD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -672,4 +690,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xt6-D5-ptu"/>
+    </inferredMetricsTieBreakers>
 </document>
