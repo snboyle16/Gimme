@@ -10,7 +10,11 @@
 		029C302B1E80831D0F30AF26 /* Pods_GimmeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */; };
 		A98A49BCCB144603CA4CB74A /* Pods_GimmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */; };
 		C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */; };
-		E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E809FB2454DD8400175345 /* DataClasses.swift */; };
+		E4CD6BAC245597CE00559EF2 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BAB245597CE00559EF2 /* Structures.swift */; };
+		E4CD6BAE2455980900559EF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BAD2455980900559EF2 /* User.swift */; };
+		E4CD6BB02455982D00559EF2 /* Giveaway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BAF2455982D00559EF2 /* Giveaway.swift */; };
+		E4CD6BB22455985800559EF2 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB12455985800559EF2 /* FeedData.swift */; };
+		E4CD6BB42455987800559EF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB32455987800559EF2 /* DummyData.swift */; };
 		F72FBFB7245588A900055797 /* Asset 6.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9B245588A900055797 /* Asset 6.svg */; };
 		F72FBFB8245588A900055797 /* Asset 4.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9C245588A900055797 /* Asset 4.svg */; };
 		F72FBFB9245588A900055797 /* Asset 5.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9D245588A900055797 /* Asset 5.svg */; };
@@ -85,7 +89,11 @@
 		4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gimme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.release.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E4E809FB2454DD8400175345 /* DataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BAB245597CE00559EF2 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BAD2455980900559EF2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BAF2455982D00559EF2 /* Giveaway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giveaway.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BB12455985800559EF2 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BB32455987800559EF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = SOURCE_ROOT; };
 		F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F72FBF9B245588A900055797 /* Asset 6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 6.svg"; sourceTree = "<group>"; };
 		F72FBF9C245588A900055797 /* Asset 4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 4.svg"; sourceTree = "<group>"; };
@@ -332,7 +340,11 @@
 		F7FC9B832454932E00904091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4E809FB2454DD8400175345 /* DataClasses.swift */,
+				E4CD6BAB245597CE00559EF2 /* Structures.swift */,
+				E4CD6BAD2455980900559EF2 /* User.swift */,
+				E4CD6BAF2455982D00559EF2 /* Giveaway.swift */,
+				E4CD6BB12455985800559EF2 /* FeedData.swift */,
+				E4CD6BB32455987800559EF2 /* DummyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,19 +619,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CD6BB02455982D00559EF2 /* Giveaway.swift in Sources */,
 				F7B32AA82454DBBF009D349A /* NotificationTableViewCell.swift in Sources */,
 				F7B32AA02454B071009D349A /* LoginViewController.swift in Sources */,
+				E4CD6BAC245597CE00559EF2 /* Structures.swift in Sources */,
 				F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */,
 				F72FBFD3245592BD00055797 /* TrendingViewController.swift in Sources */,
 				F756BBB724543FED00047666 /* AppDelegate.swift in Sources */,
+				E4CD6BB22455985800559EF2 /* FeedData.swift in Sources */,
+				E4CD6BAE2455980900559EF2 /* User.swift in Sources */,
 				F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */,
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
 				F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */,
-				E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */,
 				F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */,
 				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,
 				F7B32AAB2455204F009D349A /* FeedPostTableViewCell.swift in Sources */,
 				F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */,
+				E4CD6BB42455987800559EF2 /* DummyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
