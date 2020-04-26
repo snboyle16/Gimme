@@ -11,6 +11,33 @@
 		A98A49BCCB144603CA4CB74A /* Pods_GimmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9ADD531C7BC63AF2815311 /* Pods_GimmeTests.framework */; };
 		C64BC3DC952FF3C44640718B /* Pods_Gimme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B641ECE8775E3A51DEF0D5 /* Pods_Gimme.framework */; };
 		E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E809FB2454DD8400175345 /* DataClasses.swift */; };
+		F72FBFB7245588A900055797 /* Asset 6.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9B245588A900055797 /* Asset 6.svg */; };
+		F72FBFB8245588A900055797 /* Asset 4.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9C245588A900055797 /* Asset 4.svg */; };
+		F72FBFB9245588A900055797 /* Asset 5.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9D245588A900055797 /* Asset 5.svg */; };
+		F72FBFBA245588A900055797 /* Asset 1.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9E245588A900055797 /* Asset 1.svg */; };
+		F72FBFBB245588A900055797 /* Asset 2.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9F245588A900055797 /* Asset 2.svg */; };
+		F72FBFBC245588A900055797 /* Asset 3.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA0245588A900055797 /* Asset 3.svg */; };
+		F72FBFBD245588A900055797 /* Asset 5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA2245588A900055797 /* Asset 5@3x.png */; };
+		F72FBFBE245588A900055797 /* Asset 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA3245588A900055797 /* Asset 1@3x.png */; };
+		F72FBFBF245588A900055797 /* Asset 3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA4245588A900055797 /* Asset 3@3x.png */; };
+		F72FBFC0245588A900055797 /* Asset 6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA5245588A900055797 /* Asset 6@3x.png */; };
+		F72FBFC1245588A900055797 /* Asset 4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA6245588A900055797 /* Asset 4@3x.png */; };
+		F72FBFC2245588A900055797 /* Asset 2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA7245588A900055797 /* Asset 2@3x.png */; };
+		F72FBFC3245588A900055797 /* Paypal-Logo-2015.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFA8245588A900055797 /* Paypal-Logo-2015.png */; };
+		F72FBFC4245588A900055797 /* Asset 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAA245588A900055797 /* Asset 5@2x.png */; };
+		F72FBFC5245588A900055797 /* Asset 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAB245588A900055797 /* Asset 3@2x.png */; };
+		F72FBFC6245588A900055797 /* Asset 1@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAC245588A900055797 /* Asset 1@x2.png */; };
+		F72FBFC7245588A900055797 /* Asset 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAD245588A900055797 /* Asset 4@2x.png */; };
+		F72FBFC8245588A900055797 /* Asset 6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAE245588A900055797 /* Asset 6@2x.png */; };
+		F72FBFC9245588A900055797 /* Asset 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFAF245588A900055797 /* Asset 2@2x.png */; };
+		F72FBFCA245588A900055797 /* Asset 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB1245588A900055797 /* Asset 3.png */; };
+		F72FBFCB245588A900055797 /* Asset 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB2245588A900055797 /* Asset 2.png */; };
+		F72FBFCC245588A900055797 /* Asset 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB3245588A900055797 /* Asset 1.png */; };
+		F72FBFCD245588A900055797 /* Asset 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB4245588A900055797 /* Asset 5.png */; };
+		F72FBFCE245588A900055797 /* Asset 4.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB5245588A900055797 /* Asset 4.png */; };
+		F72FBFCF245588A900055797 /* Asset 6.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB6245588A900055797 /* Asset 6.png */; };
+		F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72FBFD02455900400055797 /* ProfileViewController.swift */; };
+		F72FBFD3245592BD00055797 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72FBFD2245592BD00055797 /* TrendingViewController.swift */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
 		F756BBC024543FEE00047666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBBF24543FEE00047666 /* Assets.xcassets */; };
@@ -29,7 +56,6 @@
 		F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */; };
 		F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AAF245531AC009D349A /* FeedTableViewController.swift */; };
 		F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */; };
-		F7B32AB424557AEE009D349A /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AB324557AEE009D349A /* Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +84,33 @@
 		5AF770AD12201E6AD6CFF231 /* Pods-GimmeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.release.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E4E809FB2454DD8400175345 /* DataClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClasses.swift; sourceTree = SOURCE_ROOT; };
 		F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F72FBF9B245588A900055797 /* Asset 6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 6.svg"; sourceTree = "<group>"; };
+		F72FBF9C245588A900055797 /* Asset 4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 4.svg"; sourceTree = "<group>"; };
+		F72FBF9D245588A900055797 /* Asset 5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 5.svg"; sourceTree = "<group>"; };
+		F72FBF9E245588A900055797 /* Asset 1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 1.svg"; sourceTree = "<group>"; };
+		F72FBF9F245588A900055797 /* Asset 2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 2.svg"; sourceTree = "<group>"; };
+		F72FBFA0245588A900055797 /* Asset 3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 3.svg"; sourceTree = "<group>"; };
+		F72FBFA2245588A900055797 /* Asset 5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 5@3x.png"; sourceTree = "<group>"; };
+		F72FBFA3245588A900055797 /* Asset 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 1@3x.png"; sourceTree = "<group>"; };
+		F72FBFA4245588A900055797 /* Asset 3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 3@3x.png"; sourceTree = "<group>"; };
+		F72FBFA5245588A900055797 /* Asset 6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 6@3x.png"; sourceTree = "<group>"; };
+		F72FBFA6245588A900055797 /* Asset 4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 4@3x.png"; sourceTree = "<group>"; };
+		F72FBFA7245588A900055797 /* Asset 2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 2@3x.png"; sourceTree = "<group>"; };
+		F72FBFA8245588A900055797 /* Paypal-Logo-2015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Paypal-Logo-2015.png"; sourceTree = "<group>"; };
+		F72FBFAA245588A900055797 /* Asset 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 5@2x.png"; sourceTree = "<group>"; };
+		F72FBFAB245588A900055797 /* Asset 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 3@2x.png"; sourceTree = "<group>"; };
+		F72FBFAC245588A900055797 /* Asset 1@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 1@x2.png"; sourceTree = "<group>"; };
+		F72FBFAD245588A900055797 /* Asset 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 4@2x.png"; sourceTree = "<group>"; };
+		F72FBFAE245588A900055797 /* Asset 6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 6@2x.png"; sourceTree = "<group>"; };
+		F72FBFAF245588A900055797 /* Asset 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 2@2x.png"; sourceTree = "<group>"; };
+		F72FBFB1245588A900055797 /* Asset 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 3.png"; sourceTree = "<group>"; };
+		F72FBFB2245588A900055797 /* Asset 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 2.png"; sourceTree = "<group>"; };
+		F72FBFB3245588A900055797 /* Asset 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 1.png"; sourceTree = "<group>"; };
+		F72FBFB4245588A900055797 /* Asset 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 5.png"; sourceTree = "<group>"; };
+		F72FBFB5245588A900055797 /* Asset 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 4.png"; sourceTree = "<group>"; };
+		F72FBFB6245588A900055797 /* Asset 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 6.png"; sourceTree = "<group>"; };
+		F72FBFD02455900400055797 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F72FBFD2245592BD00055797 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F756BBBB24543FED00047666 /* Gimme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gimme.xcdatamodel; sourceTree = "<group>"; };
@@ -82,7 +135,6 @@
 		F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostTableViewCell.xib; sourceTree = "<group>"; };
 		F7B32AAF245531AC009D349A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = /Users/stephenboyle/Desktop/CalHacks/Gimme/Gimme/ViewController/FeedTableViewController.swift; sourceTree = "<absolute>"; };
 		F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGiveawayViewController.swift; sourceTree = "<group>"; };
-		F7B32AB324557AEE009D349A /* Images */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Images; sourceTree = SOURCE_ROOT; };
 		FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,6 +190,70 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F72FBF99245588A900055797 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F72FBF9A245588A900055797 /* SVG */,
+				F72FBFA1245588A900055797 /* 3x */,
+				F72FBFA8245588A900055797 /* Paypal-Logo-2015.png */,
+				F72FBFA9245588A900055797 /* 2x */,
+				F72FBFB0245588A900055797 /* 1x */,
+			);
+			path = Images;
+			sourceTree = SOURCE_ROOT;
+		};
+		F72FBF9A245588A900055797 /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				F72FBF9B245588A900055797 /* Asset 6.svg */,
+				F72FBF9C245588A900055797 /* Asset 4.svg */,
+				F72FBF9D245588A900055797 /* Asset 5.svg */,
+				F72FBF9E245588A900055797 /* Asset 1.svg */,
+				F72FBF9F245588A900055797 /* Asset 2.svg */,
+				F72FBFA0245588A900055797 /* Asset 3.svg */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
+		F72FBFA1245588A900055797 /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				F72FBFA2245588A900055797 /* Asset 5@3x.png */,
+				F72FBFA3245588A900055797 /* Asset 1@3x.png */,
+				F72FBFA4245588A900055797 /* Asset 3@3x.png */,
+				F72FBFA5245588A900055797 /* Asset 6@3x.png */,
+				F72FBFA6245588A900055797 /* Asset 4@3x.png */,
+				F72FBFA7245588A900055797 /* Asset 2@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		F72FBFA9245588A900055797 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				F72FBFAA245588A900055797 /* Asset 5@2x.png */,
+				F72FBFAB245588A900055797 /* Asset 3@2x.png */,
+				F72FBFAC245588A900055797 /* Asset 1@x2.png */,
+				F72FBFAD245588A900055797 /* Asset 4@2x.png */,
+				F72FBFAE245588A900055797 /* Asset 6@2x.png */,
+				F72FBFAF245588A900055797 /* Asset 2@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		F72FBFB0245588A900055797 /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				F72FBFB1245588A900055797 /* Asset 3.png */,
+				F72FBFB2245588A900055797 /* Asset 2.png */,
+				F72FBFB3245588A900055797 /* Asset 1.png */,
+				F72FBFB4245588A900055797 /* Asset 5.png */,
+				F72FBFB5245588A900055797 /* Asset 4.png */,
+				F72FBFB6245588A900055797 /* Asset 6.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
 		F756BBAA24543FED00047666 = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +279,7 @@
 		F756BBB524543FED00047666 /* Gimme */ = {
 			isa = PBXGroup;
 			children = (
-				F7B32AB324557AEE009D349A /* Images */,
+				F72FBF99245588A900055797 /* Images */,
 				F7FC9B832454932E00904091 /* Model */,
 				F756BBB624543FED00047666 /* AppDelegate.swift */,
 				F7B32A992454983D009D349A /* Main.storyboard */,
@@ -216,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				F7B32AAF245531AC009D349A /* FeedTableViewController.swift */,
+				F72FBFD02455900400055797 /* ProfileViewController.swift */,
 				F7B32A9B2454A29A009D349A /* LandingViewController.swift */,
 				F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */,
 				F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */,
@@ -224,6 +341,7 @@
 				F7B32AA52454DAA5009D349A /* CommentTableViewCell.swift */,
 				F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */,
 				F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */,
+				F72FBFD2245592BD00055797 /* TrendingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -336,12 +454,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72FBFBC245588A900055797 /* Asset 3.svg in Resources */,
+				F72FBFB9245588A900055797 /* Asset 5.svg in Resources */,
+				F72FBFC2245588A900055797 /* Asset 2@3x.png in Resources */,
+				F72FBFC0245588A900055797 /* Asset 6@3x.png in Resources */,
+				F72FBFC9245588A900055797 /* Asset 2@2x.png in Resources */,
+				F72FBFCA245588A900055797 /* Asset 3.png in Resources */,
+				F72FBFCE245588A900055797 /* Asset 4.png in Resources */,
 				F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */,
 				F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */,
-				F7B32AB424557AEE009D349A /* Images in Resources */,
+				F72FBFC5245588A900055797 /* Asset 3@2x.png in Resources */,
 				F7B32A9A2454983D009D349A /* Main.storyboard in Resources */,
+				F72FBFCD245588A900055797 /* Asset 5.png in Resources */,
 				F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */,
+				F72FBFC8245588A900055797 /* Asset 6@2x.png in Resources */,
+				F72FBFCB245588A900055797 /* Asset 2.png in Resources */,
+				F72FBFB7245588A900055797 /* Asset 6.svg in Resources */,
+				F72FBFC6245588A900055797 /* Asset 1@x2.png in Resources */,
+				F72FBFC7245588A900055797 /* Asset 4@2x.png in Resources */,
+				F72FBFC3245588A900055797 /* Paypal-Logo-2015.png in Resources */,
+				F72FBFBE245588A900055797 /* Asset 1@3x.png in Resources */,
+				F72FBFBD245588A900055797 /* Asset 5@3x.png in Resources */,
+				F72FBFBA245588A900055797 /* Asset 1.svg in Resources */,
+				F72FBFC1245588A900055797 /* Asset 4@3x.png in Resources */,
+				F72FBFBB245588A900055797 /* Asset 2.svg in Resources */,
+				F72FBFB8245588A900055797 /* Asset 4.svg in Resources */,
+				F72FBFCC245588A900055797 /* Asset 1.png in Resources */,
+				F72FBFC4245588A900055797 /* Asset 5@2x.png in Resources */,
+				F72FBFCF245588A900055797 /* Asset 6.png in Resources */,
 				F756BBC324543FEE00047666 /* Preview Assets.xcassets in Resources */,
+				F72FBFBF245588A900055797 /* Asset 3@3x.png in Resources */,
 				F756BBC024543FEE00047666 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,9 +598,11 @@
 				F7B32AA82454DBBF009D349A /* NotificationTableViewCell.swift in Sources */,
 				F7B32AA02454B071009D349A /* LoginViewController.swift in Sources */,
 				F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */,
+				F72FBFD3245592BD00055797 /* TrendingViewController.swift in Sources */,
 				F756BBB724543FED00047666 /* AppDelegate.swift in Sources */,
 				F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */,
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
+				F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */,
 				E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */,
 				F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */,
 				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,

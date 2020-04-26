@@ -138,8 +138,6 @@ class PaypalViewController: UIViewController {
             continueButton.layer.cornerRadius = 35
             continueButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
             continueButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 36)
-        
-            PaypalImage.image = UIImage(imageLiteralResourceName: "PayPal-Logo-2015.png")
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
