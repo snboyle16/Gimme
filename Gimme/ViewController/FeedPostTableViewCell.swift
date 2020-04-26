@@ -10,16 +10,6 @@ import UIKit
 
 class FeedPostTableViewCell: UITableViewCell {
 
-    @IBAction func profilePressed(_ sender: Any) {
-    }
-    
-    @IBOutlet weak var giveAwayDescription: UILabel!
-    
-    @IBOutlet weak var timeLeft: UILabel!
-    
-    @IBOutlet weak var amountOfMoney: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,5 +20,5 @@ class FeedPostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
