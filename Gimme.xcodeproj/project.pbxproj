@@ -29,6 +29,7 @@
 		F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */; };
 		F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AAF245531AC009D349A /* FeedTableViewController.swift */; };
 		F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */; };
+		F7B32AB424557AEE009D349A /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AB324557AEE009D349A /* Images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostTableViewCell.xib; sourceTree = "<group>"; };
 		F7B32AAF245531AC009D349A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = /Users/stephenboyle/Desktop/CalHacks/Gimme/Gimme/ViewController/FeedTableViewController.swift; sourceTree = "<absolute>"; };
 		F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGiveawayViewController.swift; sourceTree = "<group>"; };
+		F7B32AB324557AEE009D349A /* Images */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Images; sourceTree = SOURCE_ROOT; };
 		FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 		F756BBB524543FED00047666 /* Gimme */ = {
 			isa = PBXGroup;
 			children = (
+				F7B32AB324557AEE009D349A /* Images */,
 				F7FC9B832454932E00904091 /* Model */,
 				F756BBB624543FED00047666 /* AppDelegate.swift */,
 				F7B32A992454983D009D349A /* Main.storyboard */,
@@ -335,6 +338,7 @@
 			files = (
 				F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */,
 				F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */,
+				F7B32AB424557AEE009D349A /* Images in Resources */,
 				F7B32A9A2454983D009D349A /* Main.storyboard in Resources */,
 				F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */,
 				F756BBC324543FEE00047666 /* Preview Assets.xcassets in Resources */,
