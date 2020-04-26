@@ -10,9 +10,30 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var gimmeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("here")
+        signUpButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        signUpButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
+        signUpButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
+        
+        loginButton.backgroundColor = UIColor(red: 0.427, green: 0.565, blue: 0.788, alpha: 1)
+        loginButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
+        loginButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
+        
+        self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
+        
+        
+        
+        gimmeLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        gimmeLabel.font = UIFont(name: "Avenir-Roman", size: 90)
+        
         // Do any additional setup after loading the view.
     }
     
