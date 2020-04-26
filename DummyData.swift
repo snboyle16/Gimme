@@ -14,7 +14,7 @@ import Firebase
 
 
 class DummyData {
-    let demoUserID: String = "FKYd4mjedIdsQXRwIsynQhx93YL2"
+    let demoUserID: String = "zP2AceEVzXNxv8q7haCfbMr6PPs2"
     let demoUserEmail: String = "sboyle9338@gmail.com"
     
     let donorUsers = [
@@ -38,7 +38,8 @@ class DummyData {
     }
     
     func addDemoUser() {
-        let demoUser = User(userID: demoUserID, email: demoUserEmail, username: "stephen")
+//        let demoUser = User(userID: demoUserID, email: demoUserEmail, username: "stephen")
+        let demoUser = User(userID: demoUserID)
         for user in users {
             demoUser.follow(userID: user.userID)
         }

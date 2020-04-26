@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+var currUser: User!
+
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var signInLabel: UILabel!
@@ -77,12 +79,19 @@ class SignUpViewController: UIViewController {
         
         // validation for email and password
         
-        if let email = emailTF.text, let password = passwordTF.text {
+        if let email = emailTF.text, let password = passwordTF.text, let username = usernameTF.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                
-                
+//                if let uuid = authResult?.user.uid {
+//                    let curr_user = User(userID: uuid, email: email, username: username)
+//                    currUser = curr_user
+//                }
+                let fbcurrUser = Auth.auth().currentUser
+                currUser = User(userID: fbcurrUser?.uid ?? "", email: email, username: username)
             }
         }
+
+        //        print("signed up")
+        //        print(currUser.email)
         
         
         

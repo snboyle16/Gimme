@@ -31,11 +31,14 @@ class FeedData {
         userRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data()
+                print(dataDescription!["following"])
                 self.following = dataDescription!["following"] as! [String]
             } else {
                 print("Document does not exist. inside FeedData class")
             }
         }
+//        print("following")
+//        print(following)
         var giveawayIDs: [String] = []
         for user in following {
             userRef = db.collection("users").document(user)
@@ -51,5 +54,7 @@ class FeedData {
         for giveawayID in giveawayIDs {
             giveaways.append(Giveaway(giveawayID: giveawayID))
         }
+        print("giveaways")
+        print(giveaways)
     }
 }

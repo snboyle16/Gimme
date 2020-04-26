@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
@@ -64,15 +63,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        print("helllo")
         if let email = usernameTF.text, let password = passwordTF.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                
 //              guard let strongSelf = self else { return }
 //              // ...
 //                print(authResult as Any)
+                let fbcurrUser = Auth.auth().currentUser
                 
+                print(fbcurrUser?.uid ?? "  hi ")
+                currUser = User(userID: fbcurrUser?.uid ?? "")
             }
         }
-        print("success")
+//        print(currUser.feedData.giveaways.count)
     }
     
     /*

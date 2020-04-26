@@ -8,7 +8,9 @@
 import UIKit
 
 class FeedTableViewController: UITableViewController {
-
+    
+    var giveaways = [Giveaway]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -20,29 +22,51 @@ class FeedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+//        DispatchQueue.main.async {
+//            let feedData = currUser.feedData
+//            self.giveaways = feedData.giveaways
+//        }
+        print("in feed")
+        
+        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("count: ")
+        print(giveaways.count)
+        return giveaways.count
     }
+    
+    
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
+        print(cell)
+        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].donationAmount)
+        cell.descriptionLabel.text = giveaways[indexPath.row].caption
+        cell.profilePicButton.imageView?.image = UIImage(named: "tony")
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm"
+        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].expirationTime)
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 144
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -33,7 +33,7 @@ class User {
         self.username = username
         self.email = email
         self.userID = userID
-        profilePic = UIImage(named: "defaultPic")
+        profilePic = UIImage(named: "tony")
         giveaways = []
         gimmes = []
         following = []
@@ -49,7 +49,7 @@ class User {
         self.username = username
         self.email = email
         userID = UUID.init().uuidString
-        profilePic = UIImage(named: "defaultPic")
+        profilePic = UIImage(named: "tony")
         giveaways = []
         gimmes = []
         following = []
@@ -64,7 +64,7 @@ class User {
         self.userID = userID
         username = ""
         email = ""
-        profilePic = UIImage(named: "defaultPic")
+        profilePic = UIImage(named: "tony")
         giveaways = []
         gimmes = []
         following = []
@@ -81,7 +81,7 @@ class User {
                 self.gimmes = dataDescription!["gimmes"] as! [String]
                 self.followers = dataDescription!["followers"] as! [String]
                 self.following = dataDescription!["following"] as! [String]
-                self.money = dataDescription!["moeny"] as! Float
+                self.money = dataDescription!["money"] as! Float
             } else {
                 print("Document does not exist. inside User class")
             }

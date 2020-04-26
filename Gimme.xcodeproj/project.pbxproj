@@ -45,6 +45,7 @@
 		F72FBFD72455984700055797 /* Comment.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD42455984600055797 /* Comment.png */; };
 		F72FBFD82455984700055797 /* Expand.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD52455984600055797 /* Expand.png */; };
 		F72FBFD92455984700055797 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD62455984700055797 /* Join.png */; };
+		F72FBFDB24559BD800055797 /* tony.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFDA24559BD800055797 /* tony.png */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
 		F756BBC024543FEE00047666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBBF24543FEE00047666 /* Assets.xcassets */; };
@@ -125,6 +126,7 @@
 		F72FBFD42455984600055797 /* Comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comment.png; sourceTree = "<group>"; };
 		F72FBFD52455984600055797 /* Expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Expand.png; sourceTree = "<group>"; };
 		F72FBFD62455984700055797 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
+		F72FBFDA24559BD800055797 /* tony.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tony.png; sourceTree = "<group>"; };
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F756BBBB24543FED00047666 /* Gimme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gimme.xcdatamodel; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				F72FBFD42455984600055797 /* Comment.png */,
+				F72FBFDA24559BD800055797 /* tony.png */,
 				F72FBFD52455984600055797 /* Expand.png */,
 				F72FBFD62455984700055797 /* Join.png */,
 				F72FBF9A245588A900055797 /* SVG */,
@@ -501,6 +504,7 @@
 				F72FBFBA245588A900055797 /* Asset 1.svg in Resources */,
 				F72FBFC1245588A900055797 /* Asset 4@3x.png in Resources */,
 				F72FBFBB245588A900055797 /* Asset 2.svg in Resources */,
+				F72FBFDB24559BD800055797 /* tony.png in Resources */,
 				F72FBFB8245588A900055797 /* Asset 4.svg in Resources */,
 				F72FBFCC245588A900055797 /* Asset 1.png in Resources */,
 				F72FBFC4245588A900055797 /* Asset 5@2x.png in Resources */,

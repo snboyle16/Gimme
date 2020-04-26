@@ -16,6 +16,7 @@ class LandingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let dummydata = DummyData()
         print("here")
         signUpButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
         signUpButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
