@@ -24,24 +24,24 @@ class FeedData {
         following = []
         updateFeed()
     }
-
-    func updateFeed() {
-        //pull the data from database
-        var userRef = db.collection("users").document(userID)
+    func readDb() {
+        let userRef = db.collection("users").document(userID)
         userRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data()
-                print(dataDescription!["following"])
                 self.following = dataDescription!["following"] as! [String]
             } else {
                 print("Document does not exist. inside FeedData class")
             }
         }
-//        print("following")
-//        print(following)
+    }
+    func updateFeed() {
+        //pull the data from database
+        
+        readDb()
         var giveawayIDs: [String] = []
         for user in following {
-            userRef = db.collection("users").document(user)
+            let userRef = db.collection("users").document(user)
             userRef.getDocument { (document, error) in
                 if let document = document, document.exists {
                     let dataDescription = document.data()
@@ -54,7 +54,5 @@ class FeedData {
         for giveawayID in giveawayIDs {
             giveaways.append(Giveaway(giveawayID: giveawayID))
         }
-        print("giveaways")
-        print(giveaways)
     }
 }
