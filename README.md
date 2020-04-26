@@ -1,5 +1,5 @@
-# Gimme is a philanthropy app where you can host randomized giveaways for people who can use the extra money. We were inspired 
-by Bill Pulte and Mr. Beast, two famous (and wealthy individuals) who have spearheaded a philanthropy movement on Twitter
+# Gimme 
+is a philanthropy app where you can host randomized giveaways for people who can use the extra money. We were inspired by Bill Pulte and Mr. Beast, two famous (and wealthy individuals) who have spearheaded a philanthropy movement on Twitter
 where they put money directly into the hands of people who need it the most. My team and I believed that it would be great
 to build an app where people who are well off can donate money directly to people with a payment system integrated into
 our app (we were unable to accomplish that part due to lack of time but we were planning on using Braintrees SDK). It is 
