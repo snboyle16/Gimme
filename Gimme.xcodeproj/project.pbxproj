@@ -38,6 +38,9 @@
 		F72FBFCF245588A900055797 /* Asset 6.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFB6245588A900055797 /* Asset 6.png */; };
 		F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72FBFD02455900400055797 /* ProfileViewController.swift */; };
 		F72FBFD3245592BD00055797 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72FBFD2245592BD00055797 /* TrendingViewController.swift */; };
+		F72FBFD72455984700055797 /* Comment.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD42455984600055797 /* Comment.png */; };
+		F72FBFD82455984700055797 /* Expand.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD52455984600055797 /* Expand.png */; };
+		F72FBFD92455984700055797 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FBFD62455984700055797 /* Join.png */; };
 		F756BBB724543FED00047666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBB624543FED00047666 /* AppDelegate.swift */; };
 		F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */; };
 		F756BBC024543FEE00047666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F756BBBF24543FEE00047666 /* Assets.xcassets */; };
@@ -111,6 +114,9 @@
 		F72FBFB6245588A900055797 /* Asset 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Asset 6.png"; sourceTree = "<group>"; };
 		F72FBFD02455900400055797 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F72FBFD2245592BD00055797 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		F72FBFD42455984600055797 /* Comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comment.png; sourceTree = "<group>"; };
+		F72FBFD52455984600055797 /* Expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Expand.png; sourceTree = "<group>"; };
+		F72FBFD62455984700055797 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
 		F756BBB324543FED00047666 /* Gimme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gimme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBB624543FED00047666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F756BBBB24543FED00047666 /* Gimme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gimme.xcdatamodel; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 		F72FBF99245588A900055797 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F72FBFD42455984600055797 /* Comment.png */,
+				F72FBFD52455984600055797 /* Expand.png */,
+				F72FBFD62455984700055797 /* Join.png */,
 				F72FBF9A245588A900055797 /* SVG */,
 				F72FBFA1245588A900055797 /* 3x */,
 				F72FBFA8245588A900055797 /* Paypal-Logo-2015.png */,
@@ -465,12 +474,14 @@
 				F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */,
 				F72FBFC5245588A900055797 /* Asset 3@2x.png in Resources */,
 				F7B32A9A2454983D009D349A /* Main.storyboard in Resources */,
+				F72FBFD92455984700055797 /* Join.png in Resources */,
 				F72FBFCD245588A900055797 /* Asset 5.png in Resources */,
 				F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */,
 				F72FBFC8245588A900055797 /* Asset 6@2x.png in Resources */,
 				F72FBFCB245588A900055797 /* Asset 2.png in Resources */,
 				F72FBFB7245588A900055797 /* Asset 6.svg in Resources */,
 				F72FBFC6245588A900055797 /* Asset 1@x2.png in Resources */,
+				F72FBFD72455984700055797 /* Comment.png in Resources */,
 				F72FBFC7245588A900055797 /* Asset 4@2x.png in Resources */,
 				F72FBFC3245588A900055797 /* Paypal-Logo-2015.png in Resources */,
 				F72FBFBE245588A900055797 /* Asset 1@3x.png in Resources */,
@@ -483,6 +494,7 @@
 				F72FBFC4245588A900055797 /* Asset 5@2x.png in Resources */,
 				F72FBFCF245588A900055797 /* Asset 6.png in Resources */,
 				F756BBC324543FEE00047666 /* Preview Assets.xcassets in Resources */,
+				F72FBFD82455984700055797 /* Expand.png in Resources */,
 				F72FBFBF245588A900055797 /* Asset 3@3x.png in Resources */,
 				F756BBC024543FEE00047666 /* Assets.xcassets in Resources */,
 			);

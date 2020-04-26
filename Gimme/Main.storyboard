@@ -234,6 +234,12 @@
                                             <constraint firstAttribute="width" constant="100" id="yUy-p3-xcH"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-cE-GIE">
+                                        <rect key="frame" x="167.5" y="123" width="79" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LCj-dL-ryS">
                                         <rect key="frame" x="0.0" y="186" width="414" height="32"/>
                                         <segments>
@@ -241,8 +247,8 @@
                                             <segment title="Gimmes"/>
                                         </segments>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ab-cE-GIE">
-                                        <rect key="frame" x="167.5" y="123" width="79" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paypal Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDa-ft-kHb">
+                                        <rect key="frame" x="109" y="147" width="196" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -250,13 +256,19 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="8Ab-cE-GIE" firstAttribute="leading" secondItem="984-H8-X00" secondAttribute="leading" constant="167.5" id="2eu-1W-VmZ"/>
                                     <constraint firstAttribute="height" constant="217" id="3v7-IG-aNX"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Ab-cE-GIE" secondAttribute="trailing" constant="167.5" id="49f-pL-4m2"/>
                                     <constraint firstItem="8Ab-cE-GIE" firstAttribute="top" secondItem="Jkb-t1-0Tw" secondAttribute="bottom" constant="15" id="5EB-hY-0nc"/>
+                                    <constraint firstAttribute="trailing" secondItem="RDa-ft-kHb" secondAttribute="trailing" constant="109" id="6We-8z-NdJ"/>
                                     <constraint firstItem="Jkb-t1-0Tw" firstAttribute="top" secondItem="984-H8-X00" secondAttribute="top" constant="8" id="8Cc-0l-cJh"/>
+                                    <constraint firstItem="RDa-ft-kHb" firstAttribute="top" secondItem="8Ab-cE-GIE" secondAttribute="bottom" constant="3" id="DU2-xB-w9N"/>
                                     <constraint firstItem="Jkb-t1-0Tw" firstAttribute="leading" secondItem="984-H8-X00" secondAttribute="leading" constant="157" id="SdN-eD-fOV"/>
                                     <constraint firstAttribute="width" constant="414" id="XoV-kW-CGA"/>
+                                    <constraint firstItem="8Ab-cE-GIE" firstAttribute="top" secondItem="Jkb-t1-0Tw" secondAttribute="bottom" constant="15" id="YDZ-Sz-iCQ"/>
                                     <constraint firstAttribute="bottom" secondItem="LCj-dL-ryS" secondAttribute="bottom" id="at1-Zk-sCO"/>
                                     <constraint firstItem="8Ab-cE-GIE" firstAttribute="centerX" secondItem="984-H8-X00" secondAttribute="centerX" id="dnk-lI-vjg"/>
+                                    <constraint firstItem="RDa-ft-kHb" firstAttribute="leading" secondItem="984-H8-X00" secondAttribute="leading" constant="109" id="eZz-is-9Av"/>
                                     <constraint firstItem="LCj-dL-ryS" firstAttribute="leading" secondItem="984-H8-X00" secondAttribute="leading" id="oqZ-Ps-8Om"/>
                                     <constraint firstAttribute="trailing" secondItem="LCj-dL-ryS" secondAttribute="trailing" id="qTo-fO-c6s"/>
                                 </constraints>
