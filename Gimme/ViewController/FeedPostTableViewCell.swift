@@ -10,6 +10,14 @@ import UIKit
 
 class FeedPostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profilePicButton: UIButton!
+    
+    @IBOutlet weak var timeLeft: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

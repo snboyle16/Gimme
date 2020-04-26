@@ -23,11 +23,12 @@
 		F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9B2454A29A009D349A /* LandingViewController.swift */; };
 		F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9D2454B05A009D349A /* SignUpViewController.swift */; };
 		F7B32AA02454B071009D349A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9F2454B071009D349A /* LoginViewController.swift */; };
-		F7B32AA22454CBB4009D349A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA12454CBB4009D349A /* FeedViewController.swift */; };
 		F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA52454DAA5009D349A /* CommentTableViewCell.swift */; };
 		F7B32AA82454DBBF009D349A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */; };
 		F7B32AAB2455204F009D349A /* FeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */; };
 		F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */; };
+		F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AAF245531AC009D349A /* FeedTableViewController.swift */; };
+		F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +75,12 @@
 		F7B32A9B2454A29A009D349A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F7B32A9D2454B05A009D349A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F7B32A9F2454B071009D349A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F7B32AA12454CBB4009D349A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F7B32AA52454DAA5009D349A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostTableViewCell.xib; sourceTree = "<group>"; };
+		F7B32AAF245531AC009D349A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = /Users/stephenboyle/Desktop/CalHacks/Gimme/Gimme/ViewController/FeedTableViewController.swift; sourceTree = "<absolute>"; };
+		F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGiveawayViewController.swift; sourceTree = "<group>"; };
 		FD26505B427C1F7A2F3E6D81 /* Pods-GimmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeTests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeTests/Pods-GimmeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDBCE512069375C008A3DA39 /* Pods_GimmeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GimmeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,14 +212,15 @@
 		F7FC9B842454933D00904091 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F7B32AAF245531AC009D349A /* FeedTableViewController.swift */,
 				F7B32A9B2454A29A009D349A /* LandingViewController.swift */,
 				F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */,
 				F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */,
 				F7B32A9F2454B071009D349A /* LoginViewController.swift */,
 				F7B32A9D2454B05A009D349A /* SignUpViewController.swift */,
-				F7B32AA12454CBB4009D349A /* FeedViewController.swift */,
 				F7B32AA52454DAA5009D349A /* CommentTableViewCell.swift */,
 				F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */,
+				F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -452,10 +455,11 @@
 				F756BBB724543FED00047666 /* AppDelegate.swift in Sources */,
 				F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */,
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
-				F7B32AA22454CBB4009D349A /* FeedViewController.swift in Sources */,
 				E4E809FC2454DD8400175345 /* DataClasses.swift in Sources */,
+				F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */,
 				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,
 				F7B32AAB2455204F009D349A /* FeedPostTableViewCell.swift in Sources */,
+				F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
