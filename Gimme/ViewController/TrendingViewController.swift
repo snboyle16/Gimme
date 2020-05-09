@@ -12,6 +12,10 @@ class TrendingViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var trendingTableView: UITableView!
+    
+    var currUserID: String?
+    var currUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         trendingTableView.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)

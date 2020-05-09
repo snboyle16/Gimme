@@ -23,6 +23,9 @@ class CreateGiveawayViewController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var amountofMoneyTF: UITextField!
     
+    var currUserID: String?
+    var currUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

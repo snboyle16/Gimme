@@ -44,7 +44,7 @@ class LandingViewController: UIViewController {
     
     
     @IBAction func loginPressed(_ sender: Any) {
-//        navigationController?.pushViewController(LoginViewController(), animated: true)
+        performSegue(withIdentifier: "toLogin", sender: self)
     }
     
     

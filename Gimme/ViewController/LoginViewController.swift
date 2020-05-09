@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    var userID: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,23 +63,48 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func loginPressed(_ sender: Any) {
-        print("helllo")
+    @IBAction func loginPressed(_ sender: UIButton) {
         if let email = usernameTF.text, let password = passwordTF.text {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                
-//              guard let strongSelf = self else { return }
-//              // ...
-//                print(authResult as Any)
-                let fbcurrUser = Auth.auth().currentUser
-                
-                print(fbcurrUser?.uid ?? "  hi ")
-                currUser = User(userID: fbcurrUser?.uid ?? "")
+            Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+
+                if (error != nil) {
+                    print("wrong username or password")
+                    return
+                }
+                if let fbcurrUser = Auth.auth().currentUser {
+                    self.userID = fbcurrUser.uid
+                    self.performSegue(withIdentifier: "loginSegue", sender: sender)
+                    }
+                }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? UITabBarController {
+            if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
+                feedTab.currUserID = self.userID
             }
         }
-//        print(currUser.feedData.giveaways.count)
     }
     
+//    func readUserData() {
+//        let userRef = db.collection("users").document(currUser.userID)
+//        userRef.getDocument { (document,error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data()
+//                currUser.username = dataDescription!["username"] as! String
+//                currUser.email = dataDescription!["email"] as! String
+//                currUser.giveaways = dataDescription!["giveaways"] as! [String]
+//                currUser.gimmes = dataDescription!["gimmes"] as! [String]
+//                currUser.followers = dataDescription!["followers"] as! [String]
+//                currUser.following = dataDescription!["following"] as! [String]
+//                currUser.money = dataDescription!["money"] as! Float
+//
+//            } else {
+//                print("Document does not exist. inside User class")
+//            }
+//        }
+//    }
+//
     /*
     // MARK: - Navigation
 

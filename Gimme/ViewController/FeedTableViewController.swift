@@ -1,21 +1,35 @@
 //
 //  FeedTableViewController.swift
-//  
+//
 //
 //  Created by Stephen Boyle on 4/25/20.
 //
 
 import UIKit
+import UIKit
+import CoreData
+import Firebase
 
 class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
-    
+    var currUserID: String?
+    var currUser: User?
+    var firstLoadDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
         self.tableView?.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        
+        
+        firstLoadDone = true
+        
+        currUser = User(userID: currUserID!)
+        currUser!.readFromDB { userdata in
+            self.updateFeed()
+        }
+        
 //         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,10 +41,43 @@ class FeedTableViewController: UITableViewController {
 //            let feedData = currUser.feedData
 //            self.giveaways = feedData.giveaways
 //        }
-        print("in feed")
+        
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+        if firstLoadDone {
+            firstLoadDone = false
+        } else {
+            updateFeed()
+        }
+
+    }
+    
+    func updateFeed() {
+        giveaways = []
+        for userID in currUser!.userData.following {
+            let userRef = db.collection("users").document(userID)
+            userRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data()
+                    let giveawayIDs = dataDescription!["giveaways"] as! [String]
+                    for giveawayID in giveawayIDs {
+                        let giveaway = Giveaway(giveawayID: giveawayID)
+                        giveaway.readFromDB { giveawayData in
+                            self.giveaways.append(giveaway)
+                            self.tableView.reloadData()
+                        }
+                    }
+                } else {
+                    print("Document does not exist. inside FeedData class")
+                }
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
 
@@ -41,8 +88,8 @@ class FeedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("count: ")
-        print(giveaways.count)
+//        print("count: ")
+//        print(giveaways.count)
         return giveaways.count
     }
     
@@ -52,14 +99,12 @@ class FeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
-        print(cell)
-        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].donationAmount)
-        cell.descriptionLabel.text = giveaways[indexPath.row].caption
+        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].giveawayData.donationAmount)
+        cell.descriptionLabel.text = giveaways[indexPath.row].giveawayData.caption + "\n" + giveaways[indexPath.row].giveawayData.userID
         cell.profilePicButton.imageView?.image = UIImage(named: "tony")
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
-        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].expirationTime)
-        
+        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].giveawayData.expirationTime)
         return cell
     }
     
@@ -84,7 +129,7 @@ class FeedTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

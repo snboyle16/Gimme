@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s8v-qz-nHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s8v-qz-nHC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,6 @@
                                 <state key="normal" title="log in"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="hTa-2a-sx2" eventType="touchUpInside" id="DyA-zQ-olm"/>
-                                    <segue destination="qCw-Kp-rla" kind="push" id="oAl-wr-nWf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-eT-90w">
@@ -81,6 +80,7 @@
                         <outlet property="gimmeLabel" destination="pEW-S0-gBg" id="94x-Eo-WYZ"/>
                         <outlet property="loginButton" destination="dEy-N5-fNe" id="Sfq-56-grN"/>
                         <outlet property="signUpButton" destination="X6u-eT-90w" id="h51-Fl-Sel"/>
+                        <segue destination="qCw-Kp-rla" kind="show" identifier="toLogin" id="ngk-A9-hFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArE-sm-QTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +104,6 @@
                                 <state key="normal" title="log in"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="Tsv-xm-4bQ"/>
-                                    <segue destination="qIo-xX-rqn" kind="push" id="B87-yG-Hfo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gv-R2-H4H">
@@ -172,6 +171,7 @@
                         <outlet property="passwordTF" destination="moD-wX-84L" id="VBN-gI-5TY"/>
                         <outlet property="usernameLabel" destination="hGb-O8-adL" id="KWU-WI-Z5d"/>
                         <outlet property="usernameTF" destination="dFF-iB-IlP" id="r4K-u0-F6W"/>
+                        <segue destination="qIo-xX-rqn" kind="show" identifier="loginSegue" id="DcD-GJ-u4W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mt-Na-crC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -340,7 +340,7 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NAx-ap-sTX"/>
                                     <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="ES2-GZ-PVa"/>
-                                    <segue destination="qIo-xX-rqn" kind="push" id="Xt6-D5-ptu"/>
+                                    <segue destination="qIo-xX-rqn" kind="show" id="Xt6-D5-ptu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -494,10 +494,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="df1-gK-akC" customClass="NotificationTableViewCell" customModule="Gimme" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="df1-gK-akC" id="gxq-yE-Usp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -816,21 +816,21 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DcD-GJ-u4W"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 2.png" width="192" height="208.5"/>
         <image name="Paypal-Logo-2015.png" width="1600" height="456"/>
-        <image name="bell" catalog="system" width="64" height="62"/>
-        <image name="bell.fill" catalog="system" width="64" height="62"/>
-        <image name="flame" catalog="system" width="54" height="64"/>
-        <image name="flame.fill" catalog="system" width="54" height="64"/>
-        <image name="hand.raised" catalog="system" width="64" height="64"/>
-        <image name="hand.raised.fill" catalog="system" width="64" height="64"/>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="plus.rectangle" catalog="system" width="64" height="46"/>
-        <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="flame" catalog="system" width="109" height="128"/>
+        <image name="flame.fill" catalog="system" width="109" height="128"/>
+        <image name="hand.raised" catalog="system" width="128" height="128"/>
+        <image name="hand.raised.fill" catalog="system" width="128" height="128"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Xt6-D5-ptu"/>
-    </inferredMetricsTieBreakers>
 </document>
