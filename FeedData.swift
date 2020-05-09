@@ -20,4 +20,5 @@ class FeedData {
     init(user: User) {
         self.user = user
         giveaways = []
+    }
 }
