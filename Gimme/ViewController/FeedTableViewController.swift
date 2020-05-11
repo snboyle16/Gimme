@@ -11,11 +11,19 @@ class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
     
+    var clickedGiveaway: Giveaway?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
         self.tableView?.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
+        
+        
+        
+        
 //         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,19 +68,45 @@ class FeedTableViewController: UITableViewController {
         return giveaways.count
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+//        clickedGiveaway = giveaways[indexPath.row]
+        
+        performSegue(withIdentifier: "openComment", sender: self)
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let fadedGreen = UIColor.AppColors.Green.FadedGreen
+        let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
+//        let fadedPurp = UIColor.AppColors.Purple.FadedPurp
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
         print(cell)
+        
         cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].donationAmount)
+        cell.amountLabel.font = UIFont(name: "Avenir-Roman", size: 24)
+        cell.amountLabel.textColor = .white
+        
         cell.descriptionLabel.text = giveaways[indexPath.row].caption
+        cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 11)
+        cell.descriptionLabel.textColor = .white
+        
         cell.profilePicButton.imageView?.image = UIImage(named: "tony")
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
+        
         cell.timeLeft.text = df.string(from: giveaways[indexPath.row].expirationTime)
+        cell.timeLeft.font = UIFont(name: "Avenir-Roman", size: 12)
+        cell.timeLeft.textColor = .white
+        
+        cell.backGroundLabel.layer.masksToBounds = true
+        cell.backGroundLabel.layer.cornerRadius = 15
+        cell.backGroundLabel.backgroundColor = fadedGreen
+        cell.contentView.sendSubviewToBack(cell.backGroundLabel)
+        cell.contentView.backgroundColor = backgroundGray
+        //design cell
+        
         
         return cell
     }
@@ -126,5 +160,18 @@ class FeedTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "openComment" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let vc = segue.destination as! CommentViewController
+                print(giveaways[indexPath.row].caption)
+                vc.giveaway = giveaways[indexPath.row]
+            }
+        }
+        
+    }
 
 }

@@ -26,52 +26,57 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        
+        let fadedGreen = UIColor.AppColors.Green.FadedGreen
+        let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
+        let fadedPurp = UIColor.AppColors.Purple.FadedPurp
+        
+        self.view.backgroundColor = backgroundGray
 //        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         // Do any additional setup after loading the view.
         
-        signInLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        signInLabel.textColor = fadedGreen
         signInLabel.font = UIFont(name: "Avenir-Roman", size: 48)
         
         emailTF.layer.borderWidth = 1.0
-        emailTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
-        emailTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        emailTF.layer.borderColor = fadedGreen.cgColor
+        emailTF.backgroundColor = backgroundGray
         emailTF.font = UIFont(name: "Avenir-Roman", size: 20)
-        emailTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        emailTF.textColor = fadedGreen
         emailTF.clipsToBounds = true
         emailTF.layer.cornerRadius = 10.0
         
         usernameTF.layer.borderWidth = 1.0
-        usernameTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
-        usernameTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        usernameTF.layer.borderColor = fadedGreen.cgColor
+        usernameTF.backgroundColor = backgroundGray
         usernameTF.font = UIFont(name: "Avenir-Roman", size: 20)
-        usernameTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameTF.textColor = fadedGreen
         usernameTF.clipsToBounds = true
         usernameTF.layer.cornerRadius = 10.0
         
         passwordTF.layer.borderWidth = 1.0
-        passwordTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
-        passwordTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        passwordTF.layer.borderColor = fadedGreen.cgColor
+        passwordTF.backgroundColor = backgroundGray
         passwordTF.font = UIFont(name: "Avenir-Roman", size: 20)
-        passwordTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordTF.textColor = fadedGreen
         passwordTF.clipsToBounds = true
         passwordTF.layer.cornerRadius = 10.0
         
         signinButton.frame = CGRect(x: 0, y: 0, width: 235, height: 75)
         signinButton.backgroundColor = .white
-        signinButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
-        signinButton.layer.cornerRadius = 35
-        signinButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
-        signinButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 36)
+        signinButton.backgroundColor = fadedPurp
+//        signinButton.layer.cornerRadius = 35
+        signinButton.setTitleColor(backgroundGray, for: .normal)
+        signinButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
         
-        emailLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        emailLabel.textColor = fadedGreen
         emailLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         
-        usernameLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameLabel.textColor = fadedGreen
         usernameLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         
-        passwordLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordLabel.textColor = fadedGreen
         passwordLabel.font = UIFont(name: "Avenir-Roman", size: 18)
     }
     
@@ -87,6 +92,7 @@ class SignUpViewController: UIViewController {
 //                }
                 let fbcurrUser = Auth.auth().currentUser
                 currUser = User(userID: fbcurrUser?.uid ?? "", email: email, username: username)
+                
             }
         }
 

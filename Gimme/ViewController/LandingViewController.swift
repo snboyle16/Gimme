@@ -18,18 +18,21 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
 //        let dummydata = DummyData()
         print("here")
-        signUpButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
-        signUpButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
+        let fadedGreen = UIColor.AppColors.Green.FadedGreen
+        let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
+        let fadedPurp = UIColor.AppColors.Purple.FadedPurp
+        signUpButton.backgroundColor = fadedPurp
+        signUpButton.setTitleColor(backgroundGray, for: .normal)
         signUpButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
         
-        loginButton.backgroundColor = UIColor(red: 0.427, green: 0.565, blue: 0.788, alpha: 1)
-        loginButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
+        loginButton.backgroundColor =  fadedGreen
+        loginButton.setTitleColor(backgroundGray, for: .normal)
         loginButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
         
-        self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        self.view.backgroundColor = backgroundGray
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
-        
+//        navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
+        navigationController?.navigationBar.isHidden = true
         
         
         gimmeLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
@@ -39,12 +42,13 @@ class LandingViewController: UIViewController {
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
-//        navigationController?.pushViewController(SignUpViewController(), animated: true)
+        performSegue(withIdentifier: "toSignIn", sender: nil)
     }
     
     
     @IBAction func loginPressed(_ sender: Any) {
 //        navigationController?.pushViewController(LoginViewController(), animated: true)
+        performSegue(withIdentifier: "toLogIn", sender: nil)
     }
     
     
@@ -59,5 +63,9 @@ class LandingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
 
 }

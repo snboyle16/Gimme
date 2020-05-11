@@ -21,42 +21,44 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        let fadedGreen = UIColor.AppColors.Green.FadedGreen
+        let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
+        
+        self.view.backgroundColor = backgroundGray
 //        navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
        
-        
         loginButton.frame = CGRect(x: 0, y: 0, width: 235, height: 75)
         loginButton.backgroundColor = .white
-        loginButton.backgroundColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
-        loginButton.layer.cornerRadius = 35
-        loginButton.setTitleColor(UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1), for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 36)
+        loginButton.backgroundColor = fadedGreen
+//        loginButton.layer.cornerRadius = 35
+        loginButton.setTitleColor(backgroundGray, for: .normal)
+        loginButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 48)
         
         
-        loginLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        loginLabel.textColor = fadedGreen
         loginLabel.font = UIFont(name: "Avenir-Roman", size: 48)
         
-        usernameLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameLabel.textColor = fadedGreen
         usernameLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         
-        passwordLabel.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordLabel.textColor = fadedGreen
         passwordLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         
         usernameTF.layer.borderWidth = 1.0
-        usernameTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
-        usernameTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        usernameTF.layer.borderColor = fadedGreen.cgColor
+        usernameTF.backgroundColor = backgroundGray
         usernameTF.font = UIFont(name: "Avenir-Roman", size: 20)
-        usernameTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        usernameTF.textColor = fadedGreen
         usernameTF.clipsToBounds = true
         usernameTF.layer.cornerRadius = 10.0
         
         passwordTF.layer.borderWidth = 1.0
-        passwordTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
-        passwordTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
+        passwordTF.layer.borderColor = fadedGreen.cgColor
+        passwordTF.backgroundColor = backgroundGray
         passwordTF.font = UIFont(name: "Avenir-Roman", size: 20)
-        passwordTF.textColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)
+        passwordTF.textColor = fadedGreen
         passwordTF.clipsToBounds = true
         passwordTF.layer.cornerRadius = 10.0
         
@@ -74,6 +76,7 @@ class LoginViewController: UIViewController {
                 
                 print(fbcurrUser?.uid ?? "  hi ")
                 currUser = User(userID: fbcurrUser?.uid ?? "")
+                self?.performSegue(withIdentifier: "toTab", sender: nil)
             }
         }
 //        print(currUser.feedData.giveaways.count)
