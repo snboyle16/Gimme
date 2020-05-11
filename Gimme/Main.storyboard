@@ -82,8 +82,12 @@
                         <outlet property="gimmeLabel" destination="pEW-S0-gBg" id="94x-Eo-WYZ"/>
                         <outlet property="loginButton" destination="dEy-N5-fNe" id="Sfq-56-grN"/>
                         <outlet property="signUpButton" destination="X6u-eT-90w" id="h51-Fl-Sel"/>
+<<<<<<< HEAD
                         <segue destination="0gi-Xy-UOk" kind="show" identifier="toSignIn" id="Ori-EZ-dOC"/>
                         <segue destination="qCw-Kp-rla" kind="show" identifier="toLogIn" id="flz-30-mQL"/>
+=======
+                        <segue destination="qCw-Kp-rla" kind="show" identifier="toLogin" id="ngk-A9-hFc"/>
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArE-sm-QTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,6 +102,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-9W-lZE">
+                                <rect key="frame" x="90" y="497" width="235" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="4ob-2V-XFH"/>
+                                    <constraint firstAttribute="height" constant="75" id="Y7o-37-0Tt"/>
+                                </constraints>
+                                <state key="normal" title="log in"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="Tsv-xm-4bQ"/>
+                                </connections>
+                            </button>
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gv-R2-H4H">
                                 <rect key="frame" x="0.0" y="173" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -175,7 +193,11 @@
                         <outlet property="passwordTF" destination="moD-wX-84L" id="VBN-gI-5TY"/>
                         <outlet property="usernameLabel" destination="hGb-O8-adL" id="KWU-WI-Z5d"/>
                         <outlet property="usernameTF" destination="dFF-iB-IlP" id="r4K-u0-F6W"/>
+<<<<<<< HEAD
                         <segue destination="qIo-xX-rqn" kind="show" identifier="toTab" id="wgv-QE-rcY"/>
+=======
+                        <segue destination="qIo-xX-rqn" kind="show" identifier="loginSegue" id="DcD-GJ-u4W"/>
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mt-Na-crC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,6 +366,10 @@
                                 <connections>
                                     <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NAx-ap-sTX"/>
                                     <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="ES2-GZ-PVa"/>
+<<<<<<< HEAD
+=======
+                                    <segue destination="qIo-xX-rqn" kind="show" id="Xt6-D5-ptu"/>
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
                                 </connections>
                             </button>
                         </subviews>
@@ -859,7 +885,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="wgv-QE-rcY"/>
+=======
+        <segue reference="DcD-GJ-u4W"/>
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 2.png" width="192" height="208.5"/>

@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var toggleSwitch: UISegmentedControl!
     @IBOutlet weak var profTableView: UITableView!
     
+    var currUserID: String?
+    var currUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topView.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)

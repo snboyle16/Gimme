@@ -13,100 +13,48 @@ import Firebase
 
 class Giveaway {
     
+    var giveawayData: GiveawayData
     var giveawayID: String
-    var userID: String
-    var postedTime: Date
-    var expirationTime: Date
-    var caption: String
-    var maxNumWinners: Int
-    var donationAmount: Float
-    var joinedUsers: [String]
-    var likedUsers: [String]
-    var comments: [Comment]
-    var winners: [String]
-    var giveawayRef: DocumentReference? = nil
     
-    
-    init(userID: String, postedTime: Date, expiredTime: Date, caption: String, donationAmount: Float, maxNumWinners: Int) {
-        self.userID = userID
-        self.postedTime = postedTime
-        self.expirationTime = expiredTime
-        self.caption = caption
-        self.donationAmount = donationAmount
-        self.maxNumWinners = maxNumWinners
-        giveawayID = UUID.init().uuidString
-        joinedUsers = []
-        likedUsers = []
-        comments = []
-        winners = []
+    init(userID: String, postedTime: Date, expirationTime: Date, caption: String, donationAmount: Float, maxNumWinners: Int) {
+        self.giveawayID = UUID.init().uuidString
+        self.giveawayData = GiveawayData(userID: userID,  postedTime: postedTime, expirationTime: expirationTime, caption: caption, maxNumWinners: maxNumWinners, donationAmount: donationAmount)
         addTodb()
-        giveawayRef = db.collection("giveaways").document(giveawayID)
     }
-    
     
     init(giveawayID: String) {
         self.giveawayID = giveawayID
-        self.userID = ""
-        self.postedTime = Date()
-        self.expirationTime = Date()
-        self.caption = ""
-        self.donationAmount =  0.0
-        self.maxNumWinners = 0
-        self.joinedUsers = []
-        self.likedUsers = []
-        self.comments = []
-        self.winners = []
-        giveawayRef = db.collection("giveaways").document(giveawayID)
-        giveawayRef?.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data()
-                self.userID = dataDescription!["userID"] as! String
-                var timestamp = dataDescription!["postedTime"] as! Timestamp
-                var date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
-                self.postedTime = date
-                timestamp = dataDescription!["expirationTime"] as! Timestamp
-                date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
-                self.expirationTime = date
-                self.caption = dataDescription!["caption"] as! String
-                self.donationAmount = dataDescription!["donationAmount"] as! Float
-                self.maxNumWinners = dataDescription!["maxNumWinners"] as! Int
-                self.joinedUsers = dataDescription!["joinedUsers"] as! [String]
-                self.likedUsers = dataDescription!["likeUsers"] as! [String]
-                self.winners = dataDescription!["winners"] as! [String]
-            } else {
-                print("Document does not exist")
-            }
-        }
+        self.giveawayData = GiveawayData()
     }
     
-    
     func addJoinedUser(userID: String) {
-        joinedUsers.append(userID)
-        giveawayRef?.updateData([
+        giveawayData.joinedUsers.append(userID)
+        let giveawayRef = db.collection("giveaways").document(giveawayID)
+        giveawayRef.updateData([
             "joinedUsers": FieldValue.arrayUnion([userID])
         ])
-        
     }
     
     func addLikedUser(userID: String) {
-        likedUsers.append(userID)
-        giveawayRef?.updateData([
+        giveawayData.likedUsers.append(userID)
+        let giveawayRef = db.collection("giveaways").document(giveawayID)
+        giveawayRef.updateData([
             "likedUser": FieldValue.arrayUnion([userID])
         ])
     }
     
     
-    
     func addComment(comment: Comment) {
-        comments.append(comment)
+        giveawayData.comments.append(comment)
         //update database
+        let giveawayRef = db.collection("giveaways").document(giveawayID)
         let commentData  = [
             "userID": comment.userID,
             "commentText": comment.commentText,
             "commentDate": Timestamp(date: comment.commentDate),
             "numberOfLikes": comment.numberOfLikes
         ] as [String : Any]
-        giveawayRef?.updateData([
+        giveawayRef.updateData([
             "comments": FieldValue.arrayUnion([commentData])
         ])
     }
@@ -118,31 +66,36 @@ class Giveaway {
     
     func pickWinners () {
         //randomly select winners
-        if maxNumWinners >= joinedUsers.count {
-            let moneyUnit: Float = donationAmount/Float(joinedUsers.count)
-            for winnerID in joinedUsers {
+        var winners = [String]()
+        if giveawayData.maxNumWinners >= giveawayData.joinedUsers.count {
+            let moneyUnit: Float = giveawayData.donationAmount/Float(giveawayData.joinedUsers.count)
+            for winnerID in giveawayData.joinedUsers {
+                winners.append(winnerID)
                 let winnerUser = User(userID: winnerID)
                 winnerUser.getMoney(donationMoney: moneyUnit)
             }
             
         } else {
-            let moneyUnit: Float = donationAmount/Float(maxNumWinners)
-            var joinedUsersCopy: [String] = joinedUsers.shuffled()
-            for _ in 0..<maxNumWinners {
-                let winnerID: String = joinedUsersCopy.randomElement() ?? "nil"
+            let moneyUnit: Float = giveawayData.donationAmount/Float(giveawayData.maxNumWinners)
+            var joinedUsers: [String] = giveawayData.joinedUsers.shuffled()
+            for _ in 0..<giveawayData.maxNumWinners {
+                let winnerID: String = joinedUsers.randomElement() ?? "nil"
+                winners.append(winnerID)
                 let winnerUser = User(userID: winnerID)
                 winnerUser.getMoney(donationMoney: moneyUnit)
                 
-                joinedUsersCopy = joinedUsersCopy.filter { $0 != winnerID }
-                joinedUsersCopy = joinedUsersCopy.shuffled()
+                joinedUsers = joinedUsers.filter { $0 != winnerID }
+                joinedUsers = joinedUsers.shuffled()
             }
         }
         //update database
+        let giveawayRef = db.collection("giveaways").document(giveawayID)
+        giveawayRef.updateData(["winners": winners])
     }
     
     func addTodb() {
         var commentsData: [[String : Any]] = []
-        for comment in comments {
+        for comment in giveawayData.comments {
             let commentData  = [
                 "userID": comment.userID,
                 "commentText": comment.commentText,
@@ -152,25 +105,55 @@ class Giveaway {
             commentsData.append(commentData)
         }
         
-        let giveawayData = [
-            "userID": userID,
-            "postedTime": Timestamp(date: postedTime),
-            "expirationTime": Timestamp(date: expirationTime),
-            "caption": caption,
-            "maxNumWinners": maxNumWinners,
-            "donationAmount": donationAmount,
-            "joinedUsers": joinedUsers,
-            "likedUsers": likedUsers,
+        let giveaway_data = [
+            "userID": giveawayData.userID,
+            "postedTime": Timestamp(date: giveawayData.postedTime),
+            "expirationTime": Timestamp(date: giveawayData.expirationTime),
+            "caption": giveawayData.caption,
+            "maxNumWinners": giveawayData.maxNumWinners,
+            "donationAmount": giveawayData.donationAmount,
+            "joinedUsers": giveawayData.joinedUsers,
+            "likedUsers": giveawayData.likedUsers,
             "comments": commentsData, //need to be fixed
-            "winners": winners
+            "winners": giveawayData.winners
             ] as [String : Any]
-        db.collection("giveaways").document(giveawayID).setData(giveawayData)
+        db.collection("giveaways").document(giveawayID).setData(giveaway_data)
             {err in
             if let err = err {
-                print("Error adding user: \(err)")
-            } else {
-                print("Document added successfully")
+                print("Error adding giveaway: \(err)")
             }
             }
         }
+    func readFromDB(completion: @escaping (GiveawayData) -> Void) {
+        let giveawayRef = db.collection("giveaways").document(giveawayID)
+        giveawayRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data()
+                self.giveawayData.userID = dataDescription!["userID"] as! String
+                var timestamp = dataDescription!["postedTime"] as! Timestamp
+                var date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
+                self.giveawayData.postedTime = date
+                timestamp = dataDescription!["expirationTime"] as! Timestamp
+                date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
+                self.giveawayData.expirationTime = date
+                self.giveawayData.caption = dataDescription!["caption"] as! String
+                self.giveawayData.maxNumWinners = dataDescription!["maxNumWinners"] as! Int
+                self.giveawayData.donationAmount = dataDescription!["donationAmount"] as! Float
+                self.giveawayData.joinedUsers = dataDescription!["joinedUsers"] as! [String]
+                self.giveawayData.likedUsers = dataDescription!["likedUsers"] as! [String]
+                self.giveawayData.winners = dataDescription!["winners"] as! [String]
+                
+                let commentsData = dataDescription!["comments"] as! [[String : Any]]
+                var comments: [Comment] = []
+                for comment in commentsData {
+                    comments.append(Comment(userID: comment["userID"] as! String, commentText: comment["commentText"] as! String, commentDate: comment["commentDate"] as! Date, numberOfLikes: comment["numberOfLikes"] as! Int))
+                }
+                self.giveawayData.comments = comments
+                completion(self.giveawayData)
+
+            } else {
+                print("Document does not exist. inside FeedData class")
+            }
+        }
+    }
 }

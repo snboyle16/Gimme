@@ -15,6 +15,9 @@
 		E4CD6BB02455982D00559EF2 /* Giveaway.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BAF2455982D00559EF2 /* Giveaway.swift */; };
 		E4CD6BB22455985800559EF2 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB12455985800559EF2 /* FeedData.swift */; };
 		E4CD6BB42455987800559EF2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB32455987800559EF2 /* DummyData.swift */; };
+		E4CD6BB62455BC5C00559EF2 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB52455BC5C00559EF2 /* FeedTableViewController.swift */; };
+		E4CD6BB82455BD1100559EF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4CD6BB72455BD1100559EF2 /* GoogleService-Info.plist */; };
+		E4CD6BBA2455E9CD00559EF2 /* readUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD6BB92455E9CD00559EF2 /* readUserData.swift */; };
 		F72FBFB7245588A900055797 /* Asset 6.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9B245588A900055797 /* Asset 6.svg */; };
 		F72FBFB8245588A900055797 /* Asset 4.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9C245588A900055797 /* Asset 4.svg */; };
 		F72FBFB9245588A900055797 /* Asset 5.svg in Resources */ = {isa = PBXBuildFile; fileRef = F72FBF9D245588A900055797 /* Asset 5.svg */; };
@@ -53,7 +56,6 @@
 		F756BBC624543FEE00047666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F756BBC424543FEE00047666 /* LaunchScreen.storyboard */; };
 		F756BBD124543FEF00047666 /* GimmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBD024543FEF00047666 /* GimmeTests.swift */; };
 		F756BBDC24543FEF00047666 /* GimmeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F756BBDB24543FEF00047666 /* GimmeUITests.swift */; };
-		F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F756BBE9245440A400047666 /* GoogleService-Info.plist */; };
 		F7B32A9A2454983D009D349A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B32A992454983D009D349A /* Main.storyboard */; };
 		F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9B2454A29A009D349A /* LandingViewController.swift */; };
 		F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32A9D2454B05A009D349A /* SignUpViewController.swift */; };
@@ -61,7 +63,6 @@
 		F7B32AA82454DBBF009D349A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */; };
 		F7B32AAB2455204F009D349A /* FeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */; };
 		F7B32AAC2455204F009D349A /* FeedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */; };
-		F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AAF245531AC009D349A /* FeedTableViewController.swift */; };
 		F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */; };
 		F7D243B12468D73A00DBE541 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D243B02468D73900DBE541 /* AppColors.swift */; };
 		F7D243B52468F00400DBE541 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D243B42468F00400DBE541 /* CommentViewController.swift */; };
@@ -98,6 +99,9 @@
 		E4CD6BAF2455982D00559EF2 /* Giveaway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giveaway.swift; sourceTree = SOURCE_ROOT; };
 		E4CD6BB12455985800559EF2 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = SOURCE_ROOT; };
 		E4CD6BB32455987800559EF2 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = SOURCE_ROOT; };
+		E4CD6BB52455BC5C00559EF2 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		E4CD6BB72455BD1100559EF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4CD6BB92455E9CD00559EF2 /* readUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = readUserData.swift; path = Gimme/ViewController/readUserData.swift; sourceTree = SOURCE_ROOT; };
 		F4E1F0EDDF5EF94D1C8FDF26 /* Pods-GimmeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GimmeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GimmeUITests/Pods-GimmeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F72FBF9B245588A900055797 /* Asset 6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 6.svg"; sourceTree = "<group>"; };
 		F72FBF9C245588A900055797 /* Asset 4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Asset 4.svg"; sourceTree = "<group>"; };
@@ -143,7 +147,6 @@
 		F756BBD724543FEF00047666 /* GimmeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimmeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F756BBDB24543FEF00047666 /* GimmeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimmeUITests.swift; sourceTree = "<group>"; };
 		F756BBDD24543FEF00047666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F756BBE9245440A400047666 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7B32A992454983D009D349A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F7B32A9B2454A29A009D349A /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F7B32A9D2454B05A009D349A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +154,6 @@
 		F7B32AA72454DBBF009D349A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostTableViewCell.xib; sourceTree = "<group>"; };
-		F7B32AAF245531AC009D349A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = /Users/stephenboyle/Desktop/CalHacks/Gimme/Gimme/ViewController/FeedTableViewController.swift; sourceTree = "<absolute>"; };
 		F7B32AB1245533AA009D349A /* CreateGiveawayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGiveawayViewController.swift; sourceTree = "<group>"; };
 		F7D243B02468D73900DBE541 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F7D243B42468F00400DBE541 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -313,8 +315,8 @@
 				F7FC9B842454933D00904091 /* ViewController */,
 				F756BBBF24543FEE00047666 /* Assets.xcassets */,
 				F756BBC424543FEE00047666 /* LaunchScreen.storyboard */,
+				E4CD6BB72455BD1100559EF2 /* GoogleService-Info.plist */,
 				F756BBC724543FEE00047666 /* Info.plist */,
-				F756BBE9245440A400047666 /* GoogleService-Info.plist */,
 				F756BBBA24543FED00047666 /* Gimme.xcdatamodeld */,
 				F756BBC124543FEE00047666 /* Preview Content */,
 			);
@@ -355,6 +357,7 @@
 				E4CD6BAF2455982D00559EF2 /* Giveaway.swift */,
 				E4CD6BB12455985800559EF2 /* FeedData.swift */,
 				E4CD6BB32455987800559EF2 /* DummyData.swift */,
+				E4CD6BB92455E9CD00559EF2 /* readUserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,9 +365,13 @@
 		F7FC9B842454933D00904091 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				F7B32AAF245531AC009D349A /* FeedTableViewController.swift */,
 				F7D243B42468F00400DBE541 /* CommentViewController.swift */,
+=======
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
 				F72FBFD02455900400055797 /* ProfileViewController.swift */,
+				E4CD6BB52455BC5C00559EF2 /* FeedTableViewController.swift */,
 				F7B32A9B2454A29A009D349A /* LandingViewController.swift */,
 				F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */,
 				F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */,
@@ -501,7 +508,6 @@
 				F7B32A9A2454983D009D349A /* Main.storyboard in Resources */,
 				F72FBFD92455984700055797 /* Join.png in Resources */,
 				F72FBFCD245588A900055797 /* Asset 5.png in Resources */,
-				F756BBEA245440A400047666 /* GoogleService-Info.plist in Resources */,
 				F72FBFC8245588A900055797 /* Asset 6@2x.png in Resources */,
 				F72FBFCB245588A900055797 /* Asset 2.png in Resources */,
 				F72FBFB7245588A900055797 /* Asset 6.svg in Resources */,
@@ -516,6 +522,7 @@
 				F72FBFBB245588A900055797 /* Asset 2.svg in Resources */,
 				F72FBFDB24559BD800055797 /* tony.png in Resources */,
 				F72FBFB8245588A900055797 /* Asset 4.svg in Resources */,
+				E4CD6BB82455BD1100559EF2 /* GoogleService-Info.plist in Resources */,
 				F72FBFCC245588A900055797 /* Asset 1.png in Resources */,
 				F72FBFC4245588A900055797 /* Asset 5@2x.png in Resources */,
 				F72FBFCF245588A900055797 /* Asset 6.png in Resources */,
@@ -639,13 +646,18 @@
 				E4CD6BAC245597CE00559EF2 /* Structures.swift in Sources */,
 				F756BBBC24543FED00047666 /* Gimme.xcdatamodeld in Sources */,
 				F72FBFD3245592BD00055797 /* TrendingViewController.swift in Sources */,
+				E4CD6BBA2455E9CD00559EF2 /* readUserData.swift in Sources */,
 				F756BBB724543FED00047666 /* AppDelegate.swift in Sources */,
 				E4CD6BB22455985800559EF2 /* FeedData.swift in Sources */,
 				E4CD6BAE2455980900559EF2 /* User.swift in Sources */,
+<<<<<<< HEAD
+=======
+				E4CD6BB62455BC5C00559EF2 /* FeedTableViewController.swift in Sources */,
+				F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */,
+>>>>>>> f24b8ce0af3f858043be1b3d1cdb413ea35bcefd
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
 				F7D243B12468D73A00DBE541 /* AppColors.swift in Sources */,
 				F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */,
-				F7B32AB0245531AC009D349A /* FeedTableViewController.swift in Sources */,
 				F7B32A9E2454B05A009D349A /* SignUpViewController.swift in Sources */,
 				F7B32AAB2455204F009D349A /* FeedPostTableViewCell.swift in Sources */,
 				F7B32AB2245533AA009D349A /* CreateGiveawayViewController.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 var currUser: User!
+var currFeed: FeedData!
+var currFollowing: [String] = []
 
 class SignUpViewController: UIViewController {
 

@@ -16,97 +16,46 @@ let db = Firestore.firestore()
 
 class User {
     
+    var userData: UserData
     var userID: String
-    var money: Float
-    var username: String
-    var email: String
     var profilePic: UIImage?
-    var feedData: FeedData
-    var giveaways: [String]
-    var gimmes: [String]
-    var following: [String]
-    var followers: [String]
-    var userRef: DocumentReference? = nil
 
     
     init(userID: String, email: String, username: String) {
-        self.username = username
-        self.email = email
         self.userID = userID
+        self.userData = UserData(username: username, email: email)
         profilePic = UIImage(named: "tony")
-        giveaways = []
-        gimmes = []
-        following = []
-        followers = []
-        feedData = FeedData(userID: userID)
-        money = 0.0
         addTodb()
-        userRef = db.collection("users").document(userID)
-    }
-    
-    
-    init(username: String, email: String) {
-        self.username = username
-        self.email = email
-        userID = UUID.init().uuidString
-        profilePic = UIImage(named: "tony")
-        giveaways = []
-        gimmes = []
-        following = []
-        followers = []
-        feedData = FeedData(userID: userID)
-        money = 0.0
-        addTodb()
-        userRef = db.collection("users").document(userID)
     }
     
     init(userID: String) {
         self.userID = userID
-        username = ""
-        email = ""
+        //read data user from database needs to be fixed
         profilePic = UIImage(named: "tony")
-        giveaways = []
-        gimmes = []
-        following = []
-        followers = []
-        feedData = FeedData(userID: userID)
-        userRef = db.collection("users").document(userID)
-        money = 0.0
-        userRef?.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data()
-                self.username = dataDescription!["username"] as! String
-                self.email = dataDescription!["email"] as! String
-                self.giveaways = dataDescription!["giveaways"] as! [String]
-                self.gimmes = dataDescription!["gimmes"] as! [String]
-                self.followers = dataDescription!["followers"] as! [String]
-                self.following = dataDescription!["following"] as! [String]
-                self.money = dataDescription!["money"] as! Float
-            } else {
-                print("Document does not exist. inside User class")
-            }
-        }
+        self.userData = UserData()
     }
     
     func addGiveaway(caption: String, donationAmount: Float, maxNumWinners: Int, expirationTime: Date)  {
         let currentTime = Date()
-        let giveaway = Giveaway(userID: userID, postedTime: currentTime, expiredTime: expirationTime, caption: caption, donationAmount: donationAmount, maxNumWinners: maxNumWinners)
+        let giveaway = Giveaway(userID: userID, postedTime: currentTime, expirationTime: expirationTime, caption: caption, donationAmount: donationAmount, maxNumWinners: maxNumWinners)
 
-        giveaways.append(giveaway.giveawayID)
+        userData.giveaways.append(giveaway.giveawayID)
         //update database
-        userRef?.updateData([
+        let userRef = db.collection("users").document(userID)
+        userRef.updateData([
             "giveaways": FieldValue.arrayUnion([giveaway.giveawayID])
         ])
     }
     
-    func joinGiveaway (giveawayID: String) {
+    func joinGiveaway(giveawayID: String) {
         let gimme = Giveaway(giveawayID: giveawayID)
         gimme.addJoinedUser(userID: self.userID)
         
-        gimmes.append(giveawayID)
+        userData.joinedGimmes.append(giveawayID)
         //update database
-        userRef?.updateData([
-            "gimmes": FieldValue.arrayUnion([giveawayID])
+        let userRef = db.collection("users").document(userID)
+        userRef.updateData([
+            "joinedGimmes": FieldValue.arrayUnion([giveawayID])
         ])
     }
     
@@ -123,53 +72,75 @@ class User {
     }
     
     func follow(userID: String) {
-        followers.append(userID)
+        userData.following.append(userID)
         //update database
-        userRef?.updateData([
+        let selfRef = db.collection("users").document(self.userID)
+        selfRef.updateData([
             "following": FieldValue.arrayUnion([userID])
         ])
-    }
-    
-    func getfollowed(userID: String) {
-        following.append(userID)
-        //update database
-        userRef?.updateData([
-            "followers": FieldValue.arrayUnion([userID])
+        let userRef = db.collection("users").document(userID)
+        userRef.updateData([
+            "followers": FieldValue.arrayUnion([self.userID])
         ])
     }
     
+    
     func getMoney(donationMoney: Float) {
-        self.money += donationMoney
-        userRef?.updateData([
-            "money": self.money
+        userData.money += donationMoney
+        let userRef = db.collection("users").document(userID)
+        userRef.updateData([
+            "money": userData.money
         ])
     }
     
     func giveMoney(donationMoney: Float) {
-        self.money -= donationMoney
-        userRef?.updateData([
-            "money": self.money
+        userData.money -= donationMoney
+        let userRef = db.collection("users").document(userID)
+        userRef.updateData([
+            "money": userData.money
         ])
     }
     
     func addTodb() {
-        let userData = [
-            "username": username,
-            "email": email,
-            "giveaways": giveaways,
-            "gimmes": gimmes,
-            "following": following,
-            "followers": followers,
-            "money": money
+        let userdata = [
+            "username": userData.username,
+            "email": userData.email,
+            "giveaways": userData.giveaways,
+            "gimmes": userData.gimmes,
+            "joinedGimmes": userData.joinedGimmes,
+            "followers": userData.followers,
+            "following": userData.following,
+            "money": userData.money
             ] as [String : Any]
-        db.collection("users").document(userID).setData(userData)
+        db.collection("users").document(userID).setData(userdata)
         {err in
             if let err = err {
                 print("Error adding user: \(err)")
-            } else {
-                print("Document added successfully")
             }
         }
     }
+    
+    func readFromDB(completion: @escaping (UserData) -> Void) {
+        let userRef = db.collection("users").document(userID)
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data()
+                self.userData.username = dataDescription!["username"] as! String
+                self.userData.email = dataDescription!["email"] as! String
+                self.userData.giveaways = dataDescription!["giveaways"] as! [String]
+                self.userData.gimmes = dataDescription!["gimmes"] as! [String]
+                self.userData.joinedGimmes = dataDescription!["joinedGimmes"] as! [String]
+                self.userData.followers = dataDescription!["followers"] as! [String]
+                self.userData.following = dataDescription!["following"] as! [String]
+                self.userData.money = dataDescription!["money"] as! Float
+                completion(self.userData)
+
+            } else {
+                print("Document does not exist. inside FeedData class")
+            }
+        }
+    }
+    
+    
     
 }

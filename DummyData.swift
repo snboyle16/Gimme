@@ -32,7 +32,7 @@ class DummyData {
     var users: [User] = []
     
     init() {
-        addDonorUsers()
+//        addDonorUsers()
         addGiveaway()
         addDemoUser()
     }
@@ -45,11 +45,11 @@ class DummyData {
         }
     }
     
-    func addDonorUsers() {
-        for user in donorUsers {
-            users.append(User(username: user, email: user+"@icloud.com"))
-        }
-    }
+//    func addDonorUsers() {
+//        for user in donorUsers {
+//            users.append(User(username: user, email: user+"@icloud.com"))
+//        }
+//    }
     
     func addGiveaway() {
         for user in users {
