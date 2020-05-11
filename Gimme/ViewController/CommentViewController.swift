@@ -43,9 +43,9 @@ class CommentViewController: UIViewController {
         
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
-        timeLeft.text = df.string(from: giveaway.expirationTime)
-        giveAmount.text = "\(giveaway.donationAmount)"
-        descrip.text = giveaway.caption
+        timeLeft.text = df.string(from: giveaway.giveawayData.expirationTime)
+        giveAmount.text = "\(giveaway.giveawayData.donationAmount)"
+        descrip.text = giveaway.giveawayData.caption
         // Do any additional setup after loading the view.
     }
     

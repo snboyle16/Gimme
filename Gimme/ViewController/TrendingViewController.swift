@@ -34,7 +34,7 @@ class TrendingViewController: UIViewController, UITableViewDelegate,  UITableVie
             uidList.append(UUID().uuidString)
             expireddates.append(Date())
             postedTime.append(Date())
-            giveaways.append(Giveaway(userID: UUID().uuidString, postedTime: Date(), expiredTime: Date(), caption: captions[n], donationAmount: donationAmount[n], maxNumWinners: maxWinners[n]))
+            giveaways.append(Giveaway(userID: UUID().uuidString, postedTime: Date(), expirationTime: Date(), caption: captions[n], donationAmount: donationAmount[n], maxNumWinners: maxWinners[n]))
         }
         print("giveaways")
         print(giveaways)
@@ -58,12 +58,12 @@ class TrendingViewController: UIViewController, UITableViewDelegate,  UITableVie
         
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
         print(cell)
-        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].donationAmount)
-        cell.descriptionLabel.text = giveaways[indexPath.row].caption
+        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].giveawayData.donationAmount)
+        cell.descriptionLabel.text = giveaways[indexPath.row].giveawayData.caption
         cell.profilePicButton.imageView?.image = UIImage(named: "tony")
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
-        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].expirationTime)
+        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].giveawayData.expirationTime)
         
         return cell
     }

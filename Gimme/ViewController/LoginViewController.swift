@@ -67,20 +67,22 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         if let email = usernameTF.text, let password = passwordTF.text {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                
-//              guard let strongSelf = self else { return }
-//              // ...
-//                print(authResult as Any)
-                let fbcurrUser = Auth.auth().currentUser
-                
-                print(fbcurrUser?.uid ?? "  hi ")
-                currUser = User(userID: fbcurrUser?.uid ?? "")
-                self?.performSegue(withIdentifier: "toTab", sender: nil)
-
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+                if (error != nil) {
+                    print("wrong username or password")
+                    return
+                }
+                if let fbcurrUser = Auth.auth().currentUser {
+                    self.userID = fbcurrUser.uid
+                    self.performSegue(withIdentifier: "toTab", sender: nil)
+                }
             }
         }
     }
+
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? UITabBarController {
             if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {

@@ -99,10 +99,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-9W-lZE">
-                                <rect key="frame" x="90" y="497" width="235" height="75"/>
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="235" id="4ob-2V-XFH"/>
-                                    <constraint firstAttribute="height" constant="75" id="Y7o-37-0Tt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="RGt-Yh-PZS"/>
                                 </constraints>
                                 <state key="normal" title="log in"/>
                                 <connections>
@@ -143,17 +142,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-9W-lZE">
-                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="UZt-ah-L6N"/>
-                                    <constraint firstAttribute="width" constant="414" id="Zlp-E6-vdH"/>
-                                </constraints>
-                                <state key="normal" title="log in"/>
-                                <connections>
-                                    <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="Tsv-xm-4bQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -161,19 +149,20 @@
                             <constraint firstItem="IAf-q8-rns" firstAttribute="top" secondItem="dFF-iB-IlP" secondAttribute="bottom" constant="15" id="3aa-h4-rhQ"/>
                             <constraint firstItem="jUO-CN-eam" firstAttribute="trailing" secondItem="dFF-iB-IlP" secondAttribute="trailing" constant="50" id="5Yg-cF-KYD"/>
                             <constraint firstItem="3gv-R2-H4H" firstAttribute="trailing" secondItem="jUO-CN-eam" secondAttribute="trailing" id="BYn-c3-eWU"/>
-                            <constraint firstItem="DHR-9W-lZE" firstAttribute="trailing" secondItem="jUO-CN-eam" secondAttribute="trailing" id="Elf-jh-Jc9"/>
                             <constraint firstItem="moD-wX-84L" firstAttribute="top" secondItem="IAf-q8-rns" secondAttribute="bottom" constant="5" id="Exi-OM-MMU"/>
                             <constraint firstAttribute="bottom" secondItem="DHR-9W-lZE" secondAttribute="bottom" id="HUe-PU-fhb"/>
                             <constraint firstItem="moD-wX-84L" firstAttribute="leading" secondItem="jUO-CN-eam" secondAttribute="leading" constant="50" id="Hvz-QO-sAe"/>
                             <constraint firstItem="3gv-R2-H4H" firstAttribute="leading" secondItem="jUO-CN-eam" secondAttribute="leading" id="McP-l6-YTo"/>
+                            <constraint firstItem="DHR-9W-lZE" firstAttribute="leading" secondItem="3gv-R2-H4H" secondAttribute="leading" id="NjV-gg-vQM"/>
                             <constraint firstItem="3gv-R2-H4H" firstAttribute="top" secondItem="jUO-CN-eam" secondAttribute="top" constant="85" id="QB5-Dz-lmW"/>
+                            <constraint firstAttribute="bottom" secondItem="DHR-9W-lZE" secondAttribute="bottom" id="WSi-yb-o3U"/>
                             <constraint firstItem="hGb-O8-adL" firstAttribute="top" secondItem="3gv-R2-H4H" secondAttribute="bottom" constant="30" id="YMU-1I-DYF"/>
                             <constraint firstItem="dFF-iB-IlP" firstAttribute="centerX" secondItem="jUO-CN-eam" secondAttribute="centerX" id="gCq-Jh-AmT"/>
-                            <constraint firstItem="DHR-9W-lZE" firstAttribute="leading" secondItem="jUO-CN-eam" secondAttribute="leading" id="k35-lj-uP1"/>
                             <constraint firstItem="hGb-O8-adL" firstAttribute="leading" secondItem="jUO-CN-eam" secondAttribute="leading" constant="50" id="kgO-Nr-XDH"/>
                             <constraint firstItem="moD-wX-84L" firstAttribute="centerX" secondItem="jUO-CN-eam" secondAttribute="centerX" id="qwW-wr-hJc"/>
                             <constraint firstItem="dFF-iB-IlP" firstAttribute="leading" secondItem="jUO-CN-eam" secondAttribute="leading" constant="50" id="v6x-r0-ykE"/>
                             <constraint firstItem="jUO-CN-eam" firstAttribute="trailing" secondItem="moD-wX-84L" secondAttribute="trailing" constant="50" id="vGR-6H-PGb"/>
+                            <constraint firstItem="DHR-9W-lZE" firstAttribute="trailing" secondItem="3gv-R2-H4H" secondAttribute="trailing" id="vMp-OV-hjn"/>
                             <constraint firstItem="dFF-iB-IlP" firstAttribute="top" secondItem="hGb-O8-adL" secondAttribute="bottom" constant="5" id="yBf-tv-a5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUO-CN-eam"/>
@@ -561,7 +550,7 @@
                                     <constraint firstAttribute="height" constant="137" id="Ry3-st-k8a"/>
                                     <constraint firstAttribute="width" constant="340" id="qRe-fG-JJG"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -808,7 +797,7 @@
                                             <constraint firstAttribute="width" constant="350" id="U7Y-Vq-qJM"/>
                                             <constraint firstAttribute="height" constant="156" id="YDV-Ux-uo4"/>
                                         </constraints>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

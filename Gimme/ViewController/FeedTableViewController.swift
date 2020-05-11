@@ -49,13 +49,11 @@ class FeedTableViewController: UITableViewController {
             uidList.append(UUID().uuidString)
             expireddates.append(Date())
             postedTime.append(Date())
-            giveaways.append(Giveaway(userID: UUID().uuidString, postedTime: Date(), expiredTime: Date(), caption: captions[n], donationAmount: donationAmount[n], maxNumWinners: maxWinners[n]))
+            giveaways.append(Giveaway(userID: UUID().uuidString, postedTime: Date(), expirationTime: Date(), caption: captions[n], donationAmount: donationAmount[n], maxNumWinners: maxWinners[n]))
         }
-        print("giveaways")
-        print(giveaways)
-        
         
         firstLoadDone = true
+        
         
         currUser = User(userID: currUserID!)
         currUser!.readFromDB { userdata in
@@ -125,11 +123,11 @@ class FeedTableViewController: UITableViewController {
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
         print(cell)
         
-        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].donationAmount)
+        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].giveawayData.donationAmount)
         cell.amountLabel.font = UIFont(name: "Avenir-Roman", size: 24)
         cell.amountLabel.textColor = .white
         
-        cell.descriptionLabel.text = giveaways[indexPath.row].caption
+        cell.descriptionLabel.text = giveaways[indexPath.row].giveawayData.caption
         cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 11)
         cell.descriptionLabel.textColor = .white
         
@@ -137,7 +135,7 @@ class FeedTableViewController: UITableViewController {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
         
-        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].expirationTime)
+        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].giveawayData.expirationTime)
         cell.timeLeft.font = UIFont(name: "Avenir-Roman", size: 12)
         cell.timeLeft.textColor = .white
         
@@ -207,7 +205,7 @@ class FeedTableViewController: UITableViewController {
         if segue.identifier == "openComment" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! CommentViewController
-                print(giveaways[indexPath.row].caption)
+                print(giveaways[indexPath.row].giveawayData.caption)
                 vc.giveaway = giveaways[indexPath.row]
             }
         }
