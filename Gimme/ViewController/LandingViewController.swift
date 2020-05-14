@@ -18,6 +18,7 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
 //        let dummydata = DummyData()
         print("here")
+//        self.navigationItem.setHidesBackButton(true, animated: false)
         let fadedGreen = UIColor.AppColors.Green.FadedGreen
         let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
         let fadedPurp = UIColor.AppColors.Purple.FadedPurp

@@ -18,14 +18,25 @@ class FeedTableViewController: UITableViewController {
     var firstLoadDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+//        navigationItem.leftBarButtonItem = backButton
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.topItem?.hidesBackButton = true
+        
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
         self.navigationItem.setHidesBackButton(true, animated: false)
+        
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
         self.tableView?.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
         
-        
-        
+        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        navImageView.contentMode = .scaleAspectFit
+        let navImage = UIImage(named: "Comment")
+        navImageView.image = navImage
+        navigationItem.titleView = navImageView
         
 //         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
         // Uncomment the following line to preserve selection between presentations

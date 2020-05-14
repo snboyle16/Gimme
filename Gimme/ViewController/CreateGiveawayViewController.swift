@@ -50,6 +50,10 @@ class CreateGiveawayViewController: UIViewController {
         numWinnersTF.clipsToBounds = true
         numWinnersTF.layer.cornerRadius = 10.0
         
+        
+        amountofMoneyTF.attributedPlaceholder = NSAttributedString(string: "$0.00",
+                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1)])
+        amountofMoneyTF.addTarget(self, action: #selector(myTextFieldDidChange(_:)), for: .editingChanged)
         amountofMoneyTF.layer.borderWidth = 2.0
         amountofMoneyTF.layer.borderColor = UIColor(red: 0.427, green: 0.788, blue: 0.651, alpha: 1).cgColor
         amountofMoneyTF.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
@@ -63,6 +67,13 @@ class CreateGiveawayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
+
+        if let amountString = textField.text?.currencyInputFormatting() {
+            textField.text = amountString
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -74,4 +85,34 @@ class CreateGiveawayViewController: UIViewController {
     }
     */
 
+}
+
+extension String {
+
+    // formatting text for currency textField
+    func currencyInputFormatting() -> String {
+
+        var number: NSNumber!
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+
+        var amountWithPrefix = self
+
+        // remove from String: "$", ".", ","
+        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+
+        let double = (amountWithPrefix as NSString).doubleValue
+        number = NSNumber(value: (double / 100))
+
+        // if first number is 0 or all numbers were deleted
+        guard number != 0 as NSNumber else {
+            return ""
+        }
+
+        return formatter.string(from: number)!
+    }
 }
