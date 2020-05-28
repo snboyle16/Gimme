@@ -25,7 +25,6 @@ class User {
         self.userID = userID
         self.userData = UserData(username: username, email: email)
         profilePic = UIImage(named: "tony")
-        addTodb()
     }
     
     init(userID: String) {
@@ -101,10 +100,15 @@ class User {
         ])
     }
     
-    func addTodb() {
+    func addPayPalLink (paypal: String) {
+        userData.paypal = paypal
+    }
+    
+    func addTodb(completion: @escaping () -> Void) {
         let userdata = [
             "username": userData.username,
             "email": userData.email,
+            "paypal": userData.paypal,
             "giveaways": userData.giveaways,
             "gimmes": userData.gimmes,
             "joinedGimmes": userData.joinedGimmes,
@@ -117,6 +121,7 @@ class User {
             if let err = err {
                 print("Error adding user: \(err)")
             }
+            completion()
         }
     }
     
@@ -127,6 +132,7 @@ class User {
                 let dataDescription = document.data()
                 self.userData.username = dataDescription!["username"] as! String
                 self.userData.email = dataDescription!["email"] as! String
+//                self.userData.paypal = dataDescription!["paypal"] as! String
                 self.userData.giveaways = dataDescription!["giveaways"] as! [String]
                 self.userData.gimmes = dataDescription!["gimmes"] as! [String]
                 self.userData.joinedGimmes = dataDescription!["joinedGimmes"] as! [String]

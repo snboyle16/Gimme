@@ -74,6 +74,15 @@ class CreateGiveawayViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func postPressed(_ sender: Any) {
+        let giveawayAmount: Float = Float(amountofMoneyTF.text!)!
+        let numWinners: Int = Int(numWinnersTF.text!)!
+
+        let giveaway = Giveaway(userID: currUserID!, postedTime: Date(), expirationTime: endOfGiveaway.date, caption: descriptionTV.text, donationAmount: giveawayAmount, maxNumWinners: numWinners)
+        
+    }
+    
 
     /*
     // MARK: - Navigation

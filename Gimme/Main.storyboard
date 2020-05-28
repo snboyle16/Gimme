@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s8v-qz-nHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s8v-qz-nHC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -345,6 +345,7 @@
                                 </constraints>
                                 <state key="normal" title="continue"/>
                                 <connections>
+                                    <action selector="continuePressed:" destination="zAA-5U-yCR" eventType="touchUpInside" id="rqT-Ur-hk5"/>
                                     <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NAx-ap-sTX"/>
                                     <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="ES2-GZ-PVa"/>
                                 </connections>
@@ -369,7 +370,7 @@
                         <outlet property="continueButton" destination="rUc-81-a21" id="Iuh-Vw-a3m"/>
                         <outlet property="paypalMeLabel" destination="FKw-4Z-LTs" id="CrS-M2-hKO"/>
                         <outlet property="paypalMeTF" destination="vXv-gF-rWt" id="ckA-Ph-C9P"/>
-                        <segue destination="qIo-xX-rqn" kind="show" id="Dji-kk-vI8"/>
+                        <segue destination="qIo-xX-rqn" kind="show" identifier="toTabBar" id="Dji-kk-vI8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7b-jk-J5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -481,7 +482,7 @@
                         <outlet property="signinButton" destination="zpp-PP-4lT" id="M3o-ij-AMV"/>
                         <outlet property="usernameLabel" destination="Ut5-hj-uqu" id="0dO-lO-Bnj"/>
                         <outlet property="usernameTF" destination="p7z-bh-BUa" id="554-jc-OcH"/>
-                        <segue destination="zAA-5U-yCR" kind="show" id="PqZ-z0-QSO"/>
+                        <segue destination="zAA-5U-yCR" kind="show" identifier="toPayPal" id="PqZ-z0-QSO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgM-y6-054" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -595,6 +596,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-a0-lzB">
                                 <rect key="frame" x="353" y="767" width="31" height="30"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postPressed:" destination="q5l-ks-x8I" eventType="touchUpInside" id="n62-YK-j3G"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gXl-El-GzV">
                                 <rect key="frame" x="15" y="435" width="384" height="150"/>
@@ -863,7 +867,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wgv-QE-rcY"/>
+        <segue reference="Dji-kk-vI8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 2.png" width="192" height="208.5"/>

@@ -21,6 +21,7 @@ struct Comment {
 struct UserData {
     var username: String
     var email: String
+    var paypal: String
     var giveaways: [String]
     var gimmes: [String]
     var joinedGimmes: [String]
@@ -28,11 +29,12 @@ struct UserData {
     var following: [String]
     var money: Float
     
-    init(username: String? = nil, email: String? = nil,
+    init(username: String? = nil, email: String? = nil, paypal: String? = nil,
          giveaways: [String]? = nil, gimmes: [String]? = nil, joinedGimmes: [String]? = nil, followers: [String]? = nil,
          following: [String]? = nil, money: Float? = 0.0) {
         self.username = username ?? ""
         self.email = email ?? ""
+        self.paypal = paypal ?? ""
         self.giveaways = giveaways ?? []
         self.gimmes = gimmes ?? []
         self.joinedGimmes = joinedGimmes ?? []

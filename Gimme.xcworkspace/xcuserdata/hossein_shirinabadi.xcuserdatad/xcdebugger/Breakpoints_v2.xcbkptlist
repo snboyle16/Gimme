@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "02E25618-6014-489B-A2C1-AC8D99BD37FD"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gimme/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356 - 52d0824f2683eb74"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gimme.AppDelegate.window.getter : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "Gimme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hossein_shirinabadi/Desktop/Gimme/Gimme/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356 - f7f9d871140a3b78"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gimme.AppDelegate.window.setter : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "Gimme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hossein_shirinabadi/Desktop/Gimme/Gimme/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356 - 50d728b1ccab0769"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gimme.AppDelegate.window.modify : Swift.Optional&lt;__C.UIWindow&gt;"
+                  moduleName = "Gimme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hossein_shirinabadi/Desktop/Gimme/Gimme/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356 - 6d772223d84b141c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gimme.AppDelegate.window.modify : Swift.Optional&lt;__C.UIWindow&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gimme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hossein_shirinabadi/Desktop/Gimme/Gimme/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "292F6DF0-1EBE-49BB-ADAE-A006E665D356 - ec5632d56f06ed19"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gimme.AppDelegate.init() -&gt; Gimme.AppDelegate"
+                  moduleName = "Gimme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hossein_shirinabadi/Desktop/Gimme/Gimme/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
