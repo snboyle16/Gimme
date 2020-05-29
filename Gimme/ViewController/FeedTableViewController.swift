@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import UIKit
 import CoreData
 import Firebase
 
 class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
-    var currUserID: String?
-    var currUser: User?
+//    var currUserID: String?
+//    var currUser: User?
     var firstLoadDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,21 +21,31 @@ class FeedTableViewController: UITableViewController {
 //        navigationItem.leftBarButtonItem = backButton
 //        self.navigationController?.navigationBar.isHidden = false
 //        self.navigationController?.navigationBar.topItem?.hidesBackButton = true
+//        self.navigationItem.leftBarButtonItem = nil
+//        self.navigationItem.hidesBackButton = true
+//        self.navigationItem.setHidesBackButton(true, animated: false)
         
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.setHidesBackButton(true, animated: false)
         
         self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
         self.tableView?.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
+        let mySegmentedControl = UISegmentedControl()
         
-        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
-        navImageView.contentMode = .scaleAspectFit
-        let navImage = UIImage(named: "Comment")
-        navImageView.image = navImage
-        navigationItem.titleView = navImageView
+        mySegmentedControl.insertSegment(withTitle: "Following", at: 0, animated: true)
+        mySegmentedControl.insertSegment(withTitle: "For You", at: 1, animated: true)
+        mySegmentedControl.setEnabled(true, forSegmentAt: 0)
+        
+//        mySegmentedControl.addTarget(self, action: #selector(self.indexChanged(segment: mySegmentedControl)), for: .touchUpInside)
+        
+        navigationItem.titleView = mySegmentedControl
+        
+        
+//        let navImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+//        navImageView.contentMode = .scaleAspectFit
+//        let navImage = UIImage(named: "Comment")
+//        navImageView.image = navImage
+//        navigationItem.titleView = navImageView
         
 //         navigationController?.navigationBar.barTintColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 0)
         // Uncomment the following line to preserve selection between presentations
@@ -50,20 +59,9 @@ class FeedTableViewController: UITableViewController {
 //            self.giveaways = feedData.giveaways
 //        }
         firstLoadDone = true
-        currUser = User(userID: currUserID!)
-        currUser!.readFromDB { userdata in
-            DispatchQueue.main.async {
-                self.updateFeed()
-                let trendingTab = (self.tabBarController?.viewControllers?[1])! as! TrendingViewController
-                let createTab = (self.tabBarController?.viewControllers?[2])! as! CreateGiveawayViewController
-                let profileTab = (self.tabBarController?.viewControllers?[4])! as! ProfileViewController
-                
-                trendingTab.currUser = self.currUser
-                createTab.currUser = self.currUser
-                profileTab.currUser = self.currUser
-            }
-            
-        }
+        updateFeed()
+//        currUser = User(userID: currUserID!)
+
 //        let usernames: [String] = ["tonystark","billgates","marcfisher","tombrady","lionelmessi","jamescorden","davidbeckham","trevornoah","lebronjames","barackobama"]
 //          let captions: [String] = ["I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy", "I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy"]
 //          let donationAmount: [Float] = [100.0, 1000.0, 50.0, 250.0, 400.0,300,100,10,600, 800]
@@ -118,13 +116,17 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-
+    @objc func indexChanged(segment: UISegmentedControl) {
+        if segment.selectedSegmentIndex == 0 {
+            print("Following")
+        }
+        if segment.selectedSegmentIndex == 1 {
+            print("For You")
+            giveaways = []
+        }
+        
+    }
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

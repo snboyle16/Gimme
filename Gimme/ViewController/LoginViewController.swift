@@ -8,7 +8,8 @@
 
 import UIKit
 import Firebase
-
+var currUser: User!
+var currUserID: String!
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    var userID: String!
+//    var userID: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +75,12 @@ class LoginViewController: UIViewController {
                     return
                 }
                 if let fbcurrUser = Auth.auth().currentUser {
-                    self.userID = fbcurrUser.uid
-                    self.performSegue(withIdentifier: "toTab", sender: nil)
+                    currUserID = fbcurrUser.uid
+                    currUser = User(userID: currUserID)
+                    currUser.readFromDB { userdata in
+                        self.performSegue(withIdentifier: "toTab", sender: nil)
+                    }
+                    
                 }
             }
         }
@@ -84,14 +89,14 @@ class LoginViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? UITabBarController {
-//            for i in 0...4 {
-                if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
-                    feedTab.currUserID = self.userID
-                }
-//            }
-            
-        }
+//        if let dest = segue.destination as? UITabBarController {
+////            for i in 0...4 {
+//                if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
+//                    feedTab.currUserID = self.userID
+//                }
+////            }
+//
+//        }
     }
     
 //    func readUserData() {

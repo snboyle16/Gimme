@@ -15,8 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var toggleSwitch: UISegmentedControl!
     @IBOutlet weak var profTableView: UITableView!
     
-    var currUserID: String?
-    var currUser: User?
+//    var currUserID: String?
+//    var currUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

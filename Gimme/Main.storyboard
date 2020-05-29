@@ -194,11 +194,9 @@
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tcz-0X-pP9" kind="relationship" relationship="viewControllers" id="h9H-Zh-yy9"/>
-                        <segue destination="xU8-nW-tsF" kind="relationship" relationship="viewControllers" id="0E4-eY-Fhr"/>
+                        <segue destination="i5o-Ov-tmL" kind="relationship" relationship="viewControllers" id="h9H-Zh-yy9"/>
                         <segue destination="q5l-ks-x8I" kind="relationship" relationship="viewControllers" id="jWf-cK-ULZ"/>
                         <segue destination="9vT-EL-5kS" kind="relationship" relationship="viewControllers" id="wWR-fb-MMt"/>
-                        <segue destination="dH0-vv-ycc" kind="relationship" relationship="viewControllers" id="IH5-43-fA2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWw-cy-Pbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -294,6 +292,7 @@
                         <viewLayoutGuide key="safeArea" id="I5X-b5-PAc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="BfP-rE-uDl"/>
+                    <navigationItem key="navigationItem" id="cf9-tc-xqm"/>
                     <connections>
                         <outlet property="profImage" destination="Jkb-t1-0Tw" id="H9J-cj-aAG"/>
                         <outlet property="profTableView" destination="amc-i9-qC7" id="Vlv-Ze-DgS"/>
@@ -304,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXj-Gc-W3k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573.913043478261" y="2558.7053571428569"/>
+            <point key="canvasLocation" x="196" y="3271"/>
         </scene>
         <!--Paypal View Controller-->
         <scene sceneID="fV5-Uf-mec">
@@ -519,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oz2-ip-p9y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="2559"/>
+            <point key="canvasLocation" x="1697.1014492753625" y="2558.7053571428569"/>
         </scene>
         <!--Create Giveaway View Controller-->
         <scene sceneID="Q0E-xO-a4O">
@@ -656,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ry9-wv-xUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50.724637681159422" y="2558.7053571428569"/>
+            <point key="canvasLocation" x="960.86956521739137" y="2558.7053571428569"/>
         </scene>
         <!--Feed Table View Controller-->
         <scene sceneID="Kkk-Uc-fTa">
@@ -681,14 +680,25 @@
                             <outlet property="delegate" destination="tcz-0X-pP9" id="96p-vg-0Xq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="hand.raised" catalog="system" selectedImage="hand.raised.fill" id="R3U-cu-am7"/>
+                    <navigationItem key="navigationItem" id="Ieb-fK-LDf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="0Bn-nf-Arz">
+                            <connections>
+                                <segue destination="dH0-vv-ycc" kind="show" id="V3r-DJ-zUT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="KtN-9y-mx3">
+                            <connections>
+                                <segue destination="xU8-nW-tsF" kind="show" id="OHO-in-hJC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="O7V-to-8co" kind="presentation" identifier="openComment" id="IJI-4z-yNk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pf9-JX-KOo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1474" y="2560"/>
+            <point key="canvasLocation" x="-565.21739130434787" y="2559.375"/>
         </scene>
         <!--Trending View Controller-->
         <scene sceneID="V0Z-bB-WXY">
@@ -737,6 +747,7 @@
                         <viewLayoutGuide key="safeArea" id="T18-Rn-lVZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" selectedImage="flame.fill" id="3gv-Xp-7VV"/>
+                    <navigationItem key="navigationItem" id="eIa-De-tpj"/>
                     <connections>
                         <outlet property="searchBar" destination="Y4g-TK-i9m" id="Urj-as-dsM"/>
                         <outlet property="trendingTableView" destination="jiU-gk-g8S" id="7BN-z2-TWg"/>
@@ -744,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CB3-tA-gcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-714.49275362318849" y="2558.7053571428569"/>
+            <point key="canvasLocation" x="195.6521739130435" y="2558.7053571428569"/>
         </scene>
         <!--Item-->
         <scene sceneID="aQK-po-22B">
@@ -864,9 +875,28 @@
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r9F-3r-1V7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i5o-Ov-tmL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="hand.raised" catalog="system" selectedImage="hand.raised.fill" id="R3U-cu-am7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TDK-SK-Z7t">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tcz-0X-pP9" kind="relationship" relationship="rootViewController" id="BbX-Qr-38U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRT-sp-Vqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1475.3623188405797" y="2559.375"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wgv-QE-rcY"/>
+        <segue reference="Dji-kk-vI8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 2.png" width="192" height="208.5"/>

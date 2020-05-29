@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 
-var currUser: User!
-var currFeed: FeedData!
-var currFollowing: [String] = []
 
 class SignUpViewController: UIViewController {
 
@@ -25,7 +22,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBOutlet weak var signinButton: UIButton!
-    var currUser: User!
+//    var currUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +86,8 @@ class SignUpViewController: UIViewController {
         if let email = emailTF.text, let password = passwordTF.text, let username = usernameTF.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let fbcurrUser = Auth.auth().currentUser {
-                    self.currUser = User(userID: fbcurrUser.uid, email: email, username: username)
+                    currUserID = fbcurrUser.uid
+                    currUser = User(userID: fbcurrUser.uid, email: email, username: username)
                     self.performSegue(withIdentifier: "toPayPal", sender: nil)
                     
                 }
@@ -102,9 +100,9 @@ class SignUpViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            // Get the new view controller using segue.destination.
            // Pass the selected object to the new view controller.
-        if let dest = segue.destination as? PaypalViewController {
-            dest.currUser = self.currUser
-        }
+//        if let dest = segue.destination as? PaypalViewController {
+//            dest.currUser = self.currUser
+//        }
     }
     
     /*
@@ -126,7 +124,6 @@ class PaypalViewController: UIViewController {
     @IBOutlet weak var paypalMeLabel: UILabel!
     @IBOutlet weak var paypalMeTF: UITextField!
     @IBOutlet weak var continueButton: UIButton!
-    var currUser: User!
     
     override func viewDidLoad() {
             super.viewDidLoad()
@@ -165,11 +162,11 @@ class PaypalViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                // Get the new view controller using segue.destination.
                // Pass the selected object to the new view controller.
-        if let dest = segue.destination as? UITabBarController {
-            if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
-                feedTab.currUserID = self.currUser.userID
-            }
-        }
+//        if let dest = segue.destination as? UITabBarController {
+//            if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
+//                feedTab.currUserID = self.currUser.userID
+//            }
+//        }
     }
         
         /*

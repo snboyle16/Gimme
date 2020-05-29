@@ -23,8 +23,8 @@ class CreateGiveawayViewController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var amountofMoneyTF: UITextField!
     
-    var currUserID: String?
-    var currUser: User?
+//    var currUserID: String?
+//    var currUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,8 +97,6 @@ class CreateGiveawayViewController: UIViewController {
         currUser?.addGiveaway(caption: descriptionTV.text, donationAmount: giveawayAmount, maxNumWinners: numWinners, expirationTime: endOfGiveaway.date)
         
         createAlert(title: "Thank you", message: "Your giveaway was succesfully posted!!")
-        
-        
         
     }
     

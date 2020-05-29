@@ -15,8 +15,8 @@ class TrendingViewController: UIViewController, UITableViewDelegate,  UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var trendingTableView: UITableView!
     
-    var currUserID: String?
-    var currUser: User?
+//    var currUserID: String?
+//    var currUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
