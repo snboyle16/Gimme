@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -82,6 +82,9 @@
                             <constraint firstAttribute="width" constant="25" id="niu-sA-7r6"/>
                         </constraints>
                         <state key="normal" image="Join.png"/>
+                        <connections>
+                            <action selector="joinPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z0C-iw-EdZ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -49,29 +49,40 @@ class FeedTableViewController: UITableViewController {
 //            let feedData = currUser.feedData
 //            self.giveaways = feedData.giveaways
 //        }
-        
-        
-//        var uidList = [String]()
-//        var expireddates = [Date]()
-//        var postedTime = [Date]()
-//        let captions: [String] = ["I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy", "I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy"]
-//        let donationAmount: [Float] = [1000.0, 100.0, 50.0, 250.0, 400.0,300,100,10,600, 800, 40, 50]
-//        let maxWinners: [Int] = [3,5, 3,2,1,5,6,3,7,4,7,2]
-//
-//        for n in 0...11 {
-//            uidList.append(UUID().uuidString)
-//            expireddates.append(Date())
-//            postedTime.append(Date())
-//            giveaways.append(Giveaway(userID: UUID().uuidString, postedTime: Date(), expirationTime: Date(), caption: captions[n], donationAmount: donationAmount[n], maxNumWinners: maxWinners[n]))
-//        }
-        
         firstLoadDone = true
-        
-        
         currUser = User(userID: currUserID!)
         currUser!.readFromDB { userdata in
-            self.updateFeed()
+            DispatchQueue.main.async {
+                self.updateFeed()
+                let trendingTab = (self.tabBarController?.viewControllers?[1])! as! TrendingViewController
+                let createTab = (self.tabBarController?.viewControllers?[2])! as! CreateGiveawayViewController
+                let profileTab = (self.tabBarController?.viewControllers?[4])! as! ProfileViewController
+                
+                trendingTab.currUser = self.currUser
+                createTab.currUser = self.currUser
+                profileTab.currUser = self.currUser
+            }
+            
         }
+//        let usernames: [String] = ["tonystark","billgates","marcfisher","tombrady","lionelmessi","jamescorden","davidbeckham","trevornoah","lebronjames","barackobama"]
+//          let captions: [String] = ["I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy", "I want to help you all out. I am going to be giving out $100 to 5 people", "In 24 hours, I will be doing a $1,000 giveaway", "I love helping people", "I was inspired by Bill Pulte to give money to people who need it more than I do", "Come getyo moneyyyyy"]
+//          let donationAmount: [Float] = [100.0, 1000.0, 50.0, 250.0, 400.0,300,100,10,600, 800]
+//          let maxWinners: [Int] = [5,4,3,2,1,5,6,3,7,4]
+//
+//
+//          for i in 0...9 {
+//              let user = User(userID: UUID().uuidString, email: usernames[i]+"@gimme.com", username: usernames[i])
+//              user.addTodb {
+//                  self.currUser?.follow(userID: user.userID)
+//                  let currentDate = Date()
+//                  var dateComponent = DateComponents()
+//                  dateComponent.day = 1
+//                  let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+//                  user.addGiveaway(caption: captions[i], donationAmount: donationAmount[i], maxNumWinners: maxWinners[i], expirationTime: futureDate!)
+//              }
+//          }
+        
+          
         
     }
     
@@ -134,6 +145,7 @@ class FeedTableViewController: UITableViewController {
         let backgroundGray = UIColor.AppColors.Gray.BackgroundGray
 //        let fadedPurp = UIColor.AppColors.Purple.FadedPurp
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
+        
 //        print(cell)
         
         cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].giveawayData.donationAmount)
@@ -158,6 +170,7 @@ class FeedTableViewController: UITableViewController {
         cell.contentView.sendSubviewToBack(cell.backGroundLabel)
         cell.contentView.backgroundColor = backgroundGray
         //design cell
+        cell.cellDelegate = self
         
         return cell
     }
@@ -222,7 +235,14 @@ class FeedTableViewController: UITableViewController {
                 vc.giveaway = giveaways[indexPath.row]
             }
         }
-        
     }
 
+}
+extension FeedTableViewController: CustomCellDelegate {
+    func customcell(cell: FeedPostTableViewCell, didTappedThe button: UIButton?) {
+        guard let indexPath = tableView.indexPath(for: cell) else  { return }
+        let selectedGiveaway = self.giveaways[indexPath.row]
+        currUser?.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
+        print("Cell action in row: \(indexPath.row)")
+    }
 }

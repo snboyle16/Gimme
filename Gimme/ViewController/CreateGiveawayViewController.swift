@@ -29,6 +29,8 @@ class CreateGiveawayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.view.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         
         descriptionLabel.textColor = UIColor.white
@@ -66,7 +68,15 @@ class CreateGiveawayViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+        descriptionTV.text =  nil
+        amountofMoneyTF.text = nil
+        numWinnersTF.text = nil
+        endOfGiveaway.date = Date()
+        self.viewDidLoad()
+
+    }
     @objc func myTextFieldDidChange(_ textField: UITextField) {
 
         if let amountString = textField.text?.currencyInputFormatting() {
@@ -76,10 +86,30 @@ class CreateGiveawayViewController: UIViewController {
     
     
     @IBAction func postPressed(_ sender: Any) {
-        let giveawayAmount: Float = Float(amountofMoneyTF.text!)!
-        let numWinners: Int = Int(numWinnersTF.text!)!
+        
+        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        var amountWithPrefix: String
+        amountWithPrefix = regex.stringByReplacingMatches(in: amountofMoneyTF.text!, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, amountofMoneyTF.text!.count), withTemplate: "")
 
-        let giveaway = Giveaway(userID: currUserID!, postedTime: Date(), expirationTime: endOfGiveaway.date, caption: descriptionTV.text, donationAmount: giveawayAmount, maxNumWinners: numWinners)
+        let giveawayAmount = (amountWithPrefix as NSString).floatValue / 100
+    
+        let numWinners: Int = Int(numWinnersTF.text!)!
+        currUser?.addGiveaway(caption: descriptionTV.text, donationAmount: giveawayAmount, maxNumWinners: numWinners, expirationTime: endOfGiveaway.date)
+        
+        createAlert(title: "Thank you", message: "Your giveaway was succesfully posted!!")
+        
+        
+        
+    }
+    
+    func createAlert(title: String, message: String) {
+        
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+        self.viewWillAppear(true)
         
     }
     

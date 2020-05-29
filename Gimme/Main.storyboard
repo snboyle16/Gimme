@@ -441,7 +441,6 @@
                                 </constraints>
                                 <state key="normal" title="sign up"/>
                                 <connections>
-                                    <action selector="loginPressed:" destination="qCw-Kp-rla" eventType="touchUpInside" id="NNm-so-kWc"/>
                                     <action selector="signUpPressed:" destination="0gi-Xy-UOk" eventType="touchUpInside" id="QwS-NQ-Ybf"/>
                                 </connections>
                             </button>
@@ -867,7 +866,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dji-kk-vI8"/>
+        <segue reference="wgv-QE-rcY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Asset 2.png" width="192" height="208.5"/>

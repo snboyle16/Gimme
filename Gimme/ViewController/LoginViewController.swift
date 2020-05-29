@@ -85,9 +85,12 @@ class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? UITabBarController {
-            if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
-                feedTab.currUserID = self.userID
-            }
+//            for i in 0...4 {
+                if let feedTab = dest.viewControllers?[0] as? FeedTableViewController {
+                    feedTab.currUserID = self.userID
+                }
+//            }
+            
         }
     }
     
