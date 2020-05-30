@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -49,8 +49,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit lrem ipsum lorem lorem dolar sit amit ..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-bb-kQO">
-                        <rect key="frame" x="15" y="58" width="300" height="44"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit lrem ipsum lorem lorem dolar sit amit ..." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-bb-kQO">
+                        <rect key="frame" x="15" y="58" width="300" height="57.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="Q84-hT-snf"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="y96-qO-H03"/>
@@ -100,6 +100,7 @@
                     <constraint firstItem="kGT-A4-7Qu" firstAttribute="leading" secondItem="rbt-Jb-qnP" secondAttribute="trailing" constant="8" id="0p9-zF-ghQ"/>
                     <constraint firstAttribute="trailing" secondItem="Xaz-bb-kQO" secondAttribute="trailing" constant="15" id="2gs-Yc-jqD"/>
                     <constraint firstItem="Zic-fI-Tqj" firstAttribute="leading" secondItem="qpC-0p-k3u" secondAttribute="trailing" constant="8" id="32c-W5-CgN"/>
+                    <constraint firstItem="Xaz-bb-kQO" firstAttribute="top" secondItem="j3W-Za-uxv" secondAttribute="bottom" constant="33" id="8fe-cp-hKw"/>
                     <constraint firstAttribute="bottom" secondItem="rbt-Jb-qnP" secondAttribute="bottom" constant="9" id="CVF-ke-T8C"/>
                     <constraint firstItem="qpC-0p-k3u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="I6a-cU-iaP"/>
                     <constraint firstAttribute="trailing" secondItem="Xaz-bb-kQO" secondAttribute="trailing" constant="15" id="JaP-J0-bYZ"/>
@@ -107,7 +108,6 @@
                     <constraint firstItem="rhh-6t-7sq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="M7G-T1-nV2"/>
                     <constraint firstAttribute="trailing" secondItem="Xaz-bb-kQO" secondAttribute="trailing" constant="15" id="Nbw-0P-mH2"/>
                     <constraint firstItem="2nK-ho-m6g" firstAttribute="leading" secondItem="kGT-A4-7Qu" secondAttribute="trailing" constant="8" id="QBf-xN-2eX"/>
-                    <constraint firstItem="Xaz-bb-kQO" firstAttribute="top" secondItem="qpC-0p-k3u" secondAttribute="bottom" constant="-1" id="S97-gd-Pcf"/>
                     <constraint firstItem="D9V-gL-0E5" firstAttribute="top" secondItem="j3W-Za-uxv" secondAttribute="bottom" constant="5" id="V03-yO-Rov"/>
                     <constraint firstAttribute="trailing" secondItem="D9V-gL-0E5" secondAttribute="trailing" constant="10" id="VCe-8s-QBx"/>
                     <constraint firstAttribute="trailing" secondItem="rhh-6t-7sq" secondAttribute="trailing" constant="5" id="bCP-jO-3Y2"/>
@@ -118,7 +118,6 @@
                     <constraint firstAttribute="trailing" secondItem="j3W-Za-uxv" secondAttribute="trailing" constant="10" id="kb7-0x-m1m"/>
                     <constraint firstAttribute="trailing" secondItem="2nK-ho-m6g" secondAttribute="trailing" constant="13" id="mjF-t4-4dB"/>
                     <constraint firstAttribute="bottom" secondItem="2nK-ho-m6g" secondAttribute="bottom" constant="9" id="oJA-ji-tM4"/>
-                    <constraint firstItem="rbt-Jb-qnP" firstAttribute="top" secondItem="Xaz-bb-kQO" secondAttribute="bottom" constant="8" id="y8N-uQ-6Fx"/>
                     <constraint firstAttribute="bottom" secondItem="kGT-A4-7Qu" secondAttribute="bottom" constant="9" id="yhp-Du-Byj"/>
                     <constraint firstItem="qpC-0p-k3u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zTL-xI-LTa"/>
                 </constraints>
