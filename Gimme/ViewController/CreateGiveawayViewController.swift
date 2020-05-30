@@ -64,7 +64,7 @@ class CreateGiveawayViewController: UIViewController {
         amountofMoneyTF.clipsToBounds = true
         amountofMoneyTF.layer.cornerRadius = 10.0
         
-        
+        endOfGiveaway.setValue(UIColor.white, forKeyPath: "textColor")
         
         // Do any additional setup after loading the view.
     }
