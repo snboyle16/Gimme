@@ -12,8 +12,8 @@ import Firebase
 class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
-//    var currUserID: String?
-//    var currUser: User?
+    let mySegmentedControl = UISegmentedControl(items: ["Following","For You"])
+
     var firstLoadDone = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +30,11 @@ class FeedTableViewController: UITableViewController {
         self.tableView?.backgroundColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1)
-        let mySegmentedControl = UISegmentedControl()
         
-        mySegmentedControl.insertSegment(withTitle: "Following", at: 0, animated: true)
-        mySegmentedControl.insertSegment(withTitle: "For You", at: 1, animated: true)
-        mySegmentedControl.setEnabled(true, forSegmentAt: 0)
+        // Adding a segment control switch at top of the Home page
         
-//        mySegmentedControl.addTarget(self, action: #selector(self.indexChanged(segment: mySegmentedControl)), for: .touchUpInside)
-        
+        mySegmentedControl.selectedSegmentIndex = 0
+        mySegmentedControl.addTarget(self, action: #selector(FeedTableViewController.indexChanged(_:)), for: .valueChanged)
         navigationItem.titleView = mySegmentedControl
         
         
@@ -59,7 +56,7 @@ class FeedTableViewController: UITableViewController {
 //            self.giveaways = feedData.giveaways
 //        }
         firstLoadDone = true
-        updateFeed()
+        updateFeed_Following()
 //        currUser = User(userID: currUserID!)
 
 //        let usernames: [String] = ["tonystark","billgates","marcfisher","tombrady","lionelmessi","jamescorden","davidbeckham","trevornoah","lebronjames","barackobama"]
@@ -89,13 +86,19 @@ class FeedTableViewController: UITableViewController {
         if firstLoadDone {
             firstLoadDone = false
         } else {
-            updateFeed()
+            if (mySegmentedControl.selectedSegmentIndex == 0)  {
+                updateFeed_Following()
+            } else {
+                updateFeed_ForYou()
+            }
+            
         }
 
     }
     
-    func updateFeed() {
+    func updateFeed_Following() {
         giveaways = []
+        self.tableView.reloadData()
         for userID in currUser!.userData.following {
             let userRef = db.collection("users").document(userID)
             userRef.getDocument { (document, error) in
@@ -116,13 +119,57 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-    @objc func indexChanged(segment: UISegmentedControl) {
-        if segment.selectedSegmentIndex == 0 {
-            print("Following")
+    func updateFeed_ForYou() {
+        giveaways = []
+        self.tableView.reloadData()
+        db.collection("giveaways").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let dataDescription = document.data()
+                    let userID = dataDescription["userID"]  as? String
+                    if (userID != currUser.userID && !currUser.userData.following.contains(userID ?? "")) {
+                        let giveawayID = document.documentID
+                        let giveaway = Giveaway(giveawayID: giveawayID)
+                        giveaway.readFromDB { giveawayData in
+                            self.giveaways.append(giveaway)
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                }
+            }
+            
+    }
+        
+//        for userID in currUser!.userData.following {
+//            let userRef = db.collection("users").document(userID)
+//            userRef.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//                    let dataDescription = document.data()
+//                    let giveawayIDs = dataDescription!["giveaways"] as! [String]
+//                    for giveawayID in giveawayIDs {
+//                        let giveaway = Giveaway(giveawayID: giveawayID)
+//                        giveaway.readFromDB { giveawayData in
+//                            self.giveaways.append(giveaway)
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                } else {
+//                    print("Document does not exist. inside FeedData class")
+//                }
+//            }
+//        }
+    }
+    
+    @objc func indexChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.updateFeed_Following()
         }
-        if segment.selectedSegmentIndex == 1 {
-            print("For You")
-            giveaways = []
+        if sender.selectedSegmentIndex == 1 {
+            self.updateFeed_ForYou()
+            
         }
         
     }
