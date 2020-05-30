@@ -365,11 +365,10 @@
 		F7FC9B842454933D00904091 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F7B32AAF245531AC009D349A /* FeedTableViewController.swift */,
 				F7D243B42468F00400DBE541 /* CommentViewController.swift */,
 				F72FBFD02455900400055797 /* ProfileViewController.swift */,
-				E4CD6BB52455BC5C00559EF2 /* FeedTableViewController.swift */,
 				F7B32A9B2454A29A009D349A /* LandingViewController.swift */,
+				E4CD6BB52455BC5C00559EF2 /* FeedTableViewController.swift */,
 				F7B32AA92455204F009D349A /* FeedPostTableViewCell.swift */,
 				F7B32AAA2455204F009D349A /* FeedPostTableViewCell.xib */,
 				F7B32A9F2454B071009D349A /* LoginViewController.swift */,
@@ -648,7 +647,6 @@
 				E4CD6BB22455985800559EF2 /* FeedData.swift in Sources */,
 				E4CD6BAE2455980900559EF2 /* User.swift in Sources */,
 				E4CD6BB62455BC5C00559EF2 /* FeedTableViewController.swift in Sources */,
-				F7B32AA62454DAA5009D349A /* CommentTableViewCell.swift in Sources */,
 				F7B32A9C2454A29A009D349A /* LandingViewController.swift in Sources */,
 				F7D243B12468D73A00DBE541 /* AppColors.swift in Sources */,
 				F72FBFD12455900400055797 /* ProfileViewController.swift in Sources */,

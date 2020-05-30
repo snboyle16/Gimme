@@ -260,9 +260,25 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 144
+        let heightOfRow = self.calculateHeight(inString: giveaways[indexPath.row].giveawayData.caption)
+        if (heightOfRow > 144) {
+            return heightOfRow * (heightOfRow / 144)
+        } else {
+            return 144
+        }
     }
     
+    func calculateHeight(inString:String) -> CGFloat {
+        let messageString = inString
+        let attributes : [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : UIFont(name: "Avenir-Roman", size: 18)!]
+
+        let attributedString = NSAttributedString(string: messageString, attributes: attributes)
+
+        let rect = attributedString.boundingRect(with: CGSize(width: 300, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, context: nil)
+
+        let requredSize = rect
+        return requredSize.height
+    }
 
     /*
     // Override to support conditional editing of the table view.
