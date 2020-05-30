@@ -16,9 +16,9 @@ class Giveaway {
     var giveawayData: GiveawayData
     var giveawayID: String
     
-    init(userID: String, postedTime: Date, expirationTime: Date, caption: String, donationAmount: Float, maxNumWinners: Int) {
+    init(userID: String, username: String, postedTime: Date, expirationTime: Date, caption: String, donationAmount: Float, maxNumWinners: Int) {
         self.giveawayID = UUID.init().uuidString
-        self.giveawayData = GiveawayData(userID: userID,  postedTime: postedTime, expirationTime: expirationTime, caption: caption, maxNumWinners: maxNumWinners, donationAmount: donationAmount)
+        self.giveawayData = GiveawayData(userID: userID, username: username, postedTime: postedTime, expirationTime: expirationTime, caption: caption, maxNumWinners: maxNumWinners, donationAmount: donationAmount)
         addTodb()
     }
     
@@ -50,6 +50,7 @@ class Giveaway {
         let giveawayRef = db.collection("giveaways").document(giveawayID)
         let commentData  = [
             "userID": comment.userID,
+            "username": comment.username,
             "commentText": comment.commentText,
             "commentDate": Timestamp(date: comment.commentDate),
             "numberOfLikes": comment.numberOfLikes
@@ -98,6 +99,7 @@ class Giveaway {
         for comment in giveawayData.comments {
             let commentData  = [
                 "userID": comment.userID,
+                "username": comment.username,
                 "commentText": comment.commentText,
                 "commentDate": Timestamp(date: comment.commentDate),
                 "numberOfLikes": comment.numberOfLikes
@@ -107,6 +109,7 @@ class Giveaway {
         
         let giveaway_data = [
             "userID": giveawayData.userID,
+            "username": giveawayData.username,
             "postedTime": Timestamp(date: giveawayData.postedTime),
             "expirationTime": Timestamp(date: giveawayData.expirationTime),
             "caption": giveawayData.caption,
@@ -130,6 +133,7 @@ class Giveaway {
             if let document = document, document.exists {
                 let dataDescription = document.data()
                 self.giveawayData.userID = dataDescription!["userID"] as! String
+                self.giveawayData.username = dataDescription!["username"] as! String
                 var timestamp = dataDescription!["postedTime"] as! Timestamp
                 var date = Date(timeIntervalSince1970: TimeInterval(timestamp.seconds))
                 self.giveawayData.postedTime = date
@@ -146,7 +150,7 @@ class Giveaway {
                 let commentsData = dataDescription!["comments"] as! [[String : Any]]
                 var comments: [Comment] = []
                 for comment in commentsData {
-                    comments.append(Comment(userID: comment["userID"] as! String, commentText: comment["commentText"] as! String, commentDate: comment["commentDate"] as! Date, numberOfLikes: comment["numberOfLikes"] as! Int))
+                    comments.append(Comment(userID: comment["userID"] as! String,username: comment["username"] as! String, commentText: comment["commentText"] as! String, commentDate: comment["commentDate"] as! Date, numberOfLikes: comment["numberOfLikes"] as! Int))
                 }
                 self.giveawayData.comments = comments
                 completion(self.giveawayData)

@@ -203,12 +203,12 @@ class FeedTableViewController: UITableViewController {
         cell.amountLabel.font = UIFont(name: "Avenir-Roman", size: 24)
         cell.amountLabel.textColor = .white
         
-        cell.usernameLabel.text = gimme.userID
-        cell.usernameLabel.font = UIFont(name: "Avenir-Roman", size: 12)
+        cell.usernameLabel.text = gimme.username
+        cell.usernameLabel.font = UIFont(name: "Avenir-Roman", size: 16)
         cell.usernameLabel.textColor = .white
         
         cell.descriptionLabel.text = gimme.caption
-        cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 11)
+        cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         cell.descriptionLabel.textColor = .white
         
         cell.profilePicButton.imageView?.image = UIImage(named: "tony")
