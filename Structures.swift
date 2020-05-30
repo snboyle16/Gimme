@@ -13,6 +13,7 @@ import Firebase
 
 struct Comment {
     var userID: String
+    var username: String
     var commentText: String
     var commentDate: Date
     var numberOfLikes: Int
@@ -46,6 +47,7 @@ struct UserData {
 
 struct GiveawayData {
     var userID: String
+    var username: String
     var postedTime: Date
     var expirationTime: Date
     var caption: String
@@ -56,10 +58,11 @@ struct GiveawayData {
     var comments: [Comment]
     var winners: [String]
     
-    init(userID: String? = nil,
+    init(userID: String? = nil, username: String? = nil,
          postedTime: Date? = nil, expirationTime: Date? = nil, caption: String? = nil, maxNumWinners: Int? = nil,
          donationAmount: Float? = nil, joinedUsers: [String]? = nil, likedUsers: [String]? = nil, comments: [Comment]? = nil, winners: [String]? = nil) {
         self.userID = userID ?? ""
+        self.username = username ?? ""
         self.postedTime = postedTime ?? Date()
         self.expirationTime = expirationTime ?? Date()
         self.caption = caption ?? ""

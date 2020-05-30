@@ -36,7 +36,7 @@ class User {
     
     func addGiveaway(caption: String, donationAmount: Float, maxNumWinners: Int, expirationTime: Date)  {
         let currentTime = Date()
-        let giveaway = Giveaway(userID: userID, postedTime: currentTime, expirationTime: expirationTime, caption: caption, donationAmount: donationAmount, maxNumWinners: maxNumWinners)
+        let giveaway = Giveaway(userID: userID,username: userData.username, postedTime: currentTime, expirationTime: expirationTime, caption: caption, donationAmount: donationAmount, maxNumWinners: maxNumWinners)
 
         userData.giveaways.append(giveaway.giveawayID)
         //update database
@@ -66,7 +66,7 @@ class User {
     func addComment(giveawayID: String, commentText: String) {
         let giveaway = Giveaway(giveawayID: giveawayID)
         let currentDate = Date()
-        let comment = Comment(userID: self.userID, commentText: commentText, commentDate: currentDate, numberOfLikes: 0)
+        let comment = Comment(userID: self.userID, username: userData.username, commentText: commentText, commentDate: currentDate, numberOfLikes: 0)
         giveaway.addComment(comment: comment)
     }
     
