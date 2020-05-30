@@ -99,6 +99,7 @@ class FeedTableViewController: UITableViewController {
     
     func updateFeed_Following() {
         giveaways = []
+        images = []
         self.tableView.reloadData()
         for userID in currUser!.userData.following {
             let userRef = db.collection("users").document(userID)
@@ -134,6 +135,7 @@ class FeedTableViewController: UITableViewController {
     
     func updateFeed_ForYou() {
         giveaways = []
+        images = []
         self.tableView.reloadData()
         db.collection("giveaways").getDocuments() { (querySnapshot, err) in
             if let err = err {
