@@ -197,11 +197,17 @@ class FeedTableViewController: UITableViewController {
         
 //        print(cell)
         
-        cell.amountLabel.text = String(format:"%f", giveaways[indexPath.row].giveawayData.donationAmount)
+        let gimme = giveaways[indexPath.row].giveawayData
+        
+        cell.amountLabel.text = "$" + String(format:"%.2f", gimme.donationAmount)
         cell.amountLabel.font = UIFont(name: "Avenir-Roman", size: 24)
         cell.amountLabel.textColor = .white
         
-        cell.descriptionLabel.text = giveaways[indexPath.row].giveawayData.caption
+        cell.usernameLabel.text = gimme.userID
+        cell.usernameLabel.font = UIFont(name: "Avenir-Roman", size: 12)
+        cell.usernameLabel.textColor = .white
+        
+        cell.descriptionLabel.text = gimme.caption
         cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 11)
         cell.descriptionLabel.textColor = .white
         
@@ -209,7 +215,7 @@ class FeedTableViewController: UITableViewController {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
         
-        cell.timeLeft.text = df.string(from: giveaways[indexPath.row].giveawayData.expirationTime)
+        cell.timeLeft.text = df.string(from: gimme.expirationTime)
         cell.timeLeft.font = UIFont(name: "Avenir-Roman", size: 12)
         cell.timeLeft.textColor = .white
         
@@ -218,6 +224,7 @@ class FeedTableViewController: UITableViewController {
         cell.backGroundLabel.backgroundColor = fadedGreen
         cell.contentView.sendSubviewToBack(cell.backGroundLabel)
         cell.contentView.backgroundColor = backgroundGray
+        
         //design cell
         cell.cellDelegate = self
         

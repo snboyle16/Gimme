@@ -20,6 +20,7 @@ class FeedPostTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLeft: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var backGroundLabel: UILabel!
     
