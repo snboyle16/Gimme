@@ -38,19 +38,19 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3W-Za-uxv">
-                        <rect key="frame" x="266" y="10" width="54" height="15"/>
+                        <rect key="frame" x="266" y="10" width="54" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-gL-0E5">
-                        <rect key="frame" x="238" y="30" width="82" height="29"/>
+                        <rect key="frame" x="238" y="36" width="82" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit lrem ipsum lorem lorem dolar sit amit ..." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaz-bb-kQO">
-                        <rect key="frame" x="15" y="58" width="300" height="57.5"/>
+                        <rect key="frame" x="15" y="67" width="300" height="57.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="Q84-hT-snf"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="y96-qO-H03"/>
@@ -151,9 +151,10 @@
                     <constraint firstItem="Zic-fI-Tqj" firstAttribute="leading" secondItem="qpC-0p-k3u" secondAttribute="trailing" constant="8" id="32c-W5-CgN"/>
                     <constraint firstItem="cWm-IZ-EWj" firstAttribute="leading" secondItem="kGT-A4-7Qu" secondAttribute="trailing" constant="4" id="3NR-Re-IGU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="qTG-IK-wF3" secondAttribute="bottom" constant="4" id="61D-Qb-7kM"/>
-                    <constraint firstItem="Xaz-bb-kQO" firstAttribute="top" secondItem="j3W-Za-uxv" secondAttribute="bottom" constant="33" id="8fe-cp-hKw"/>
+                    <constraint firstItem="Xaz-bb-kQO" firstAttribute="top" secondItem="qpC-0p-k3u" secondAttribute="bottom" constant="8" id="BSi-Fc-Kp8"/>
                     <constraint firstAttribute="bottom" secondItem="rbt-Jb-qnP" secondAttribute="bottom" constant="9" id="CVF-ke-T8C"/>
                     <constraint firstItem="rbt-Jb-qnP" firstAttribute="leading" secondItem="cWm-IZ-EWj" secondAttribute="trailing" constant="14" id="E6T-Vj-aqH"/>
+                    <constraint firstItem="Xaz-bb-kQO" firstAttribute="top" secondItem="j3W-Za-uxv" secondAttribute="bottom" constant="36" id="F3h-Xe-sl6"/>
                     <constraint firstItem="qpC-0p-k3u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="I6a-cU-iaP"/>
                     <constraint firstItem="qTG-IK-wF3" firstAttribute="leading" secondItem="rbt-Jb-qnP" secondAttribute="trailing" constant="4" id="Iow-hh-hb0"/>
                     <constraint firstAttribute="trailing" secondItem="Xaz-bb-kQO" secondAttribute="trailing" constant="15" id="JaP-J0-bYZ"/>

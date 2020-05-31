@@ -282,7 +282,7 @@ class FeedTableViewController: UITableViewController {
         if (heightOfRow > 144) {
             return heightOfRow * (heightOfRow / 144)
         } else {
-            return 144
+            return 144 + heightOfRow * (heightOfRow / 144)
         }
     }
     
