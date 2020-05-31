@@ -140,7 +140,6 @@ class FeedTableViewController: UITableViewController {
                     
                 }
             }
-            
     }
         
 //        for userID in currUser!.userData.following {
