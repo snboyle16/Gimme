@@ -24,10 +24,37 @@ class FeedPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var backGroundLabel: UILabel!
     
+    @IBOutlet weak var numCommentLabel: UILabel!
+    @IBOutlet weak var numLikeLabel: UILabel!
+    @IBOutlet weak var numJoinLabel: UILabel!
+    
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    
     //Delegate property as weak
     weak var cellDelegate:CustomCellDelegate?
     
     @IBAction func joinPressed(_ sender: Any) {
-        cellDelegate?.customcell(cell: self, didTappedThe: sender as?UIButton)
+        cellDelegate?.customcell(cell: self, didTappedThe: sender as? UIButton)
     }
+    @IBAction func commentButtonPressed(_ sender: Any) {
+        cellDelegate?.customcell(cell: self, didTappedThe: sender as? UIButton)
+    }
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        cellDelegate?.customcell(cell: self, didTappedThe: sender as? UIButton)
+    }
+    
+    @IBAction func joinButtonPressed(_ sender: Any) {
+        cellDelegate?.customcell(cell: self, didTappedThe: sender as? UIButton)
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        cellDelegate?.customcell(cell: self, didTappedThe: sender as? UIButton)
+    }
+    
+    
 }

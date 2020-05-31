@@ -255,10 +255,26 @@ class FeedTableViewController: UITableViewController {
         cell.contentView.sendSubviewToBack(cell.backGroundLabel)
         cell.contentView.backgroundColor = backgroundGray
         
+        cell.numJoinLabel.textColor = .white
+        cell.numCommentLabel.textColor = .white
+        cell.numLikeLabel.textColor = .white
+        
+        
+        changeButtonImage(button: cell.commentButton, color: .white)
+        changeButtonImage(button: cell.likeButton, color: .white)
+        changeButtonImage(button: cell.shareButton, color: .white)
+        changeButtonImage(button: cell.joinButton, color: .white)
+        
         //design cell
         cell.cellDelegate = self
 
         return cell
+    }
+    
+    func changeButtonImage(button: UIButton, color: UIColor) {
+        let imageView = button.imageView
+        imageView?.image = button.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        imageView?.tintColor = .white
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -341,10 +357,44 @@ class FeedTableViewController: UITableViewController {
 
 }
 extension FeedTableViewController: CustomCellDelegate {
+    
     func customcell(cell: FeedPostTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = tableView.indexPath(for: cell) else  { return }
         let selectedGiveaway = self.giveaways[indexPath.row]
-        currUser?.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
-        print("Cell action in row: \(indexPath.row)")
+        let cell = tableView.cellForRow(at: indexPath)!
+        let newButton = cell.contentView.viewWithTag(button?.tag ?? -1) as! UIButton
+        
+        switch button?.tag {
+        case 4:
+            print("comment pressed")
+        case 1:
+            print("like pressed")
+            if ((newButton.imageView?.image) == UIImage(systemName: "heart")) {
+                newButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                changeButtonImage(button: newButton, color: .red)
+            } else {
+                newButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                changeButtonImage(button: newButton, color: .white)
+            }
+        case 2:
+            if ((newButton.imageView?.image) == UIImage(systemName: "plus.square")) {
+                newButton.setImage(UIImage(systemName: "plus.square.fill"), for: .normal)
+                currUser?.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                print("Cell action in row: \(indexPath.row)")
+            } else {
+                newButton.setImage(UIImage(systemName: "plus.square"), for: .normal)
+                // unjoin giveaway
+            }
+            
+            
+        case 3:
+            print("share pressed")
+        case .none:
+            print("whatever")
+        case .some(_):
+            print("henlo")
+        }
     }
+    
+    
 }
