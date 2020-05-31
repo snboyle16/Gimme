@@ -8,10 +8,11 @@
 import UIKit
 import CoreData
 import Firebase
-
+let storage = Storage.storage()
 class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
+    var images = [UIImage]()
     let mySegmentedControl = UISegmentedControl(items: ["Following","For You"])
 
     var firstLoadDone = false
@@ -98,6 +99,7 @@ class FeedTableViewController: UITableViewController {
     
     func updateFeed_Following() {
         giveaways = []
+        images = []
         self.tableView.reloadData()
         for userID in currUser!.userData.following {
             let userRef = db.collection("users").document(userID)
@@ -108,8 +110,20 @@ class FeedTableViewController: UITableViewController {
                     for giveawayID in giveawayIDs {
                         let giveaway = Giveaway(giveawayID: giveawayID)
                         giveaway.readFromDB { giveawayData in
-                            self.giveaways.append(giveaway)
-                            self.tableView.reloadData()
+                            var image: UIImage!
+                            let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
+                            storageRef.getData(maxSize: 4*400*400) {  (data,error) in
+                                
+                                if let data = data {
+                                    image = UIImage(data: data)
+                                    self.images.append(image)
+                                    self.giveaways.append(giveaway)
+                                    self.tableView.reloadData()
+                                } else {
+                                    print(error!)
+                                }
+                                
+                            }
                         }
                     }
                 } else {
@@ -121,6 +135,7 @@ class FeedTableViewController: UITableViewController {
     
     func updateFeed_ForYou() {
         giveaways = []
+        images = []
         self.tableView.reloadData()
         db.collection("giveaways").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -133,8 +148,20 @@ class FeedTableViewController: UITableViewController {
                         let giveawayID = document.documentID
                         let giveaway = Giveaway(giveawayID: giveawayID)
                         giveaway.readFromDB { giveawayData in
-                            self.giveaways.append(giveaway)
-                            self.tableView.reloadData()
+                            var image: UIImage!
+                            let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
+                            storageRef.getData(maxSize: 4*400*400) {  (data,error) in
+                                
+                                if let data = data {
+                                    image = UIImage(data: data)
+                                    self.images.append(image)
+                                    self.giveaways.append(giveaway)
+                                    self.tableView.reloadData()
+                                } else {
+                                    print(error!)
+                                }
+                                
+                            }
                         }
                     }
                     
@@ -210,7 +237,10 @@ class FeedTableViewController: UITableViewController {
         cell.descriptionLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         cell.descriptionLabel.textColor = .white
         
-        cell.profilePicButton.imageView?.image = UIImage(named: "tony")
+//        cell.profilePicButton.imageView?.image = images[indexPath.row]
+        
+        cell.profilePicButton.setImage(images[indexPath.row], for: .normal)
+        
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
         
@@ -226,7 +256,7 @@ class FeedTableViewController: UITableViewController {
         
         //design cell
         cell.cellDelegate = self
-        
+
         return cell
     }
     
