@@ -229,7 +229,7 @@ class FeedTableViewController: UITableViewController {
         cell.amountLabel.font = UIFont(name: "Avenir-Roman", size: 24)
         cell.amountLabel.textColor = .white
         
-        cell.usernameLabel.text = gimme.username
+        cell.usernameLabel.text = "@" + gimme.username
         cell.usernameLabel.font = UIFont(name: "Avenir-Roman", size: 16)
         cell.usernameLabel.textColor = .white
         
@@ -240,6 +240,7 @@ class FeedTableViewController: UITableViewController {
 //        cell.profilePicButton.imageView?.image = images[indexPath.row]
         
         cell.profilePicButton.setImage(images[indexPath.row], for: .normal)
+        cell.profilePicButton.imageView?.layer.cornerRadius = cell.profilePicButton.bounds.height/2.0
         
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm"
