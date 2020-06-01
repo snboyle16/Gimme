@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 var currUser: User!
 var currUserID: String!
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginLabel: UILabel!
@@ -64,6 +64,9 @@ class LoginViewController: UIViewController {
         passwordTF.clipsToBounds = true
         passwordTF.layer.cornerRadius = 10.0
         
+        usernameTF.delegate = self
+        passwordTF.delegate = self
+        
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -97,6 +100,13 @@ class LoginViewController: UIViewController {
 ////            }
 //
 //        }
+    }
+    
+    // UITextFieldDelegat methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+        return true
     }
     
 //    func readUserData() {

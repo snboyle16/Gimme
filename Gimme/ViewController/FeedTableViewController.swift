@@ -165,7 +165,7 @@ class FeedTableViewController: UITableViewController {
         userLiked = []
         userJoined = []
         self.tableView.reloadData()
-        db.collection("giveaways").getDocuments() { (querySnapshot, err) in
+        db.collection("giveaways").order(by: "username").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -208,26 +208,7 @@ class FeedTableViewController: UITableViewController {
                     
                 }
             }
-    }
-        
-//        for userID in currUser!.userData.following {
-//            let userRef = db.collection("users").document(userID)
-//            userRef.getDocument { (document, error) in
-//                if let document = document, document.exists {
-//                    let dataDescription = document.data()
-//                    let giveawayIDs = dataDescription!["giveaways"] as! [String]
-//                    for giveawayID in giveawayIDs {
-//                        let giveaway = Giveaway(giveawayID: giveawayID)
-//                        giveaway.readFromDB { giveawayData in
-//                            self.giveaways.append(giveaway)
-//                            self.tableView.reloadData()
-//                        }
-//                    }
-//                } else {
-//                    print("Document does not exist. inside FeedData class")
-//                }
-//            }
-//        }
+        }
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {
