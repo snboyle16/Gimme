@@ -13,6 +13,11 @@ class FeedTableViewController: UITableViewController {
     
     var giveaways = [Giveaway]()
     var images = [UIImage]()
+    var numLikes = [Int]()
+    var numJoined = [Int]()
+    var numComments = [Int]()
+    var userLiked  = [Bool]()
+    var userJoined = [Bool]()
     let mySegmentedControl = UISegmentedControl(items: ["Following","For You"])
 
     var firstLoadDone = false
@@ -82,24 +87,29 @@ class FeedTableViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-        if firstLoadDone {
-            firstLoadDone = false
-        } else {
-            if (mySegmentedControl.selectedSegmentIndex == 0)  {
-                updateFeed_Following()
-            } else {
-                updateFeed_ForYou()
-            }
-            
-        }
-
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//       super.viewWillAppear(animated)
+//        if firstLoadDone {
+//            firstLoadDone = false
+//        } else {
+//            if (mySegmentedControl.selectedSegmentIndex == 0)  {
+//                updateFeed_Following()
+//            } else {
+//                updateFeed_ForYou()
+//            }
+//
+//        }
+//
+//    }
     
     func updateFeed_Following() {
         giveaways = []
         images = []
+        numComments =  []
+        numLikes = []
+        numJoined = []
+        userLiked = []
+        userJoined = []
         self.tableView.reloadData()
         for userID in currUser!.userData.following {
             let userRef = db.collection("users").document(userID)
@@ -118,6 +128,19 @@ class FeedTableViewController: UITableViewController {
                                     image = UIImage(data: data)
                                     self.images.append(image)
                                     self.giveaways.append(giveaway)
+                                    self.numLikes.append(giveaway.giveawayData.likedUsers.count)
+                                    self.numJoined.append(giveaway.giveawayData.joinedUsers.count)
+                                    self.numComments.append(giveaway.giveawayData.comments.count)
+                                    if (giveaway.giveawayData.joinedUsers.contains(currUser.userID)) {
+                                        self.userJoined.append(true)
+                                    } else {
+                                        self.userJoined.append(false)
+                                    }
+                                    if (giveaway.giveawayData.likedUsers.contains(currUser.userID)) {
+                                        self.userLiked.append(true)
+                                    } else {
+                                        self.userLiked.append(false)
+                                    }
                                     self.tableView.reloadData()
                                 } else {
                                     print(error!)
@@ -136,6 +159,11 @@ class FeedTableViewController: UITableViewController {
     func updateFeed_ForYou() {
         giveaways = []
         images = []
+        numComments =  []
+        numLikes = []
+        numJoined = []
+        userLiked = []
+        userJoined = []
         self.tableView.reloadData()
         db.collection("giveaways").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -156,6 +184,19 @@ class FeedTableViewController: UITableViewController {
                                     image = UIImage(data: data)
                                     self.images.append(image)
                                     self.giveaways.append(giveaway)
+                                    self.numLikes.append(giveawayData.likedUsers.count)
+                                    self.numJoined.append(giveawayData.joinedUsers.count)
+                                    self.numComments.append(giveawayData.comments.count)
+                                    if (giveawayData.joinedUsers.contains(currUser.userID)) {
+                                        self.userJoined.append(true)
+                                    } else {
+                                        self.userJoined.append(false)
+                                    }
+                                    if (giveawayData.likedUsers.contains(currUser.userID)) {
+                                        self.userLiked.append(true)
+                                    } else {
+                                        self.userLiked.append(false)
+                                    }
                                     self.tableView.reloadData()
                                 } else {
                                     print(error!)
@@ -212,6 +253,10 @@ class FeedTableViewController: UITableViewController {
 //        clickedGiveaway = giveaways[indexPath.row]
         
         performSegue(withIdentifier: "openComment", sender: self)
+//        let giveaway = giveaways[indexPath.row]
+        print(numLikes)
+        print(userLiked)
+        print("Double click")
     }
 
     
@@ -259,11 +304,37 @@ class FeedTableViewController: UITableViewController {
         cell.numCommentLabel.textColor = .white
         cell.numLikeLabel.textColor = .white
         
+        cell.numJoinLabel.text = String(numJoined[indexPath.row])
+        cell.numCommentLabel.text = String(numComments[indexPath.row])
+        cell.numLikeLabel.text = String(numLikes[indexPath.row])
+        
         
         changeButtonImage(button: cell.commentButton, color: .white)
         changeButtonImage(button: cell.likeButton, color: .white)
         changeButtonImage(button: cell.shareButton, color: .white)
         changeButtonImage(button: cell.joinButton, color: .white)
+        
+        
+        if (userLiked[indexPath.row]) {
+            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            changeButtonImage(button: cell.likeButton, color: .red)
+            
+        } else {
+            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+
+        }
+        
+        if (userJoined[indexPath.row]) {
+            cell.joinButton.setImage(UIImage(systemName: "plus.square.fill"), for: .normal)
+            
+        } else {
+            cell.joinButton.setImage(UIImage(systemName: "plus.square"), for: .normal)
+        }
+            
+        
+        
+        
+        
         
         //design cell
         cell.cellDelegate = self
@@ -274,7 +345,7 @@ class FeedTableViewController: UITableViewController {
     func changeButtonImage(button: UIButton, color: UIColor) {
         let imageView = button.imageView
         imageView?.image = button.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        imageView?.tintColor = .white
+        imageView?.tintColor = color
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -349,7 +420,7 @@ class FeedTableViewController: UITableViewController {
         if segue.identifier == "openComment" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! CommentViewController
-                print(giveaways[indexPath.row].giveawayData.caption)
+                print(giveaways[indexPath.row].giveawayData)
                 vc.giveaway = giveaways[indexPath.row]
             }
         }
@@ -361,28 +432,54 @@ extension FeedTableViewController: CustomCellDelegate {
     func customcell(cell: FeedPostTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = tableView.indexPath(for: cell) else  { return }
         let selectedGiveaway = self.giveaways[indexPath.row]
-        let cell = tableView.cellForRow(at: indexPath)!
-        let newButton = cell.contentView.viewWithTag(button?.tag ?? -1) as! UIButton
+        let cell = tableView.cellForRow(at: indexPath) as? FeedPostTableViewCell
+        let newButton = cell!.contentView.viewWithTag(button?.tag ?? -1) as! UIButton
         
         switch button?.tag {
         case 4:
             print("comment pressed")
         case 1:
-            print("like pressed")
-            if ((newButton.imageView?.image) == UIImage(systemName: "heart")) {
-                newButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                changeButtonImage(button: newButton, color: .red)
-            } else {
+            
+            if (userLiked[indexPath.row]) {
+                numLikes[indexPath.row] -= 1
+                cell?.numLikeLabel.text = String(numLikes[indexPath.row])
+//                selectedGiveaway.addLikedUser(userID: currUser.userID)
+//                self.tableView.reloadData()
                 newButton.setImage(UIImage(systemName: "heart"), for: .normal)
                 changeButtonImage(button: newButton, color: .white)
+                userLiked[indexPath.row] = false
+                print("disliked")
+                
+                
+                
+            } else {
+                currUser.likeGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                numLikes[indexPath.row] += 1
+                cell?.numLikeLabel.text = String(numLikes[indexPath.row])
+//                self.tableView.reloadData()
+                newButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                changeButtonImage(button: newButton, color: .red)
+                userLiked[indexPath.row] = true
+                print("liked")
+                
             }
         case 2:
-            if ((newButton.imageView?.image) == UIImage(systemName: "plus.square")) {
-                newButton.setImage(UIImage(systemName: "plus.square.fill"), for: .normal)
-                currUser?.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
-                print("Cell action in row: \(indexPath.row)")
-            } else {
+            if (userJoined[indexPath.row]) {
+                numJoined[indexPath.row] -= 1
+                cell?.numJoinLabel.text = String(numJoined[indexPath.row])
+//                self.tableView.reloadData()
                 newButton.setImage(UIImage(systemName: "plus.square"), for: .normal)
+                userJoined[indexPath.row] = false
+                print("user disjoined")
+                
+            } else {
+                currUser.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                numJoined[indexPath.row] += 1
+                cell?.numJoinLabel.text = String(numJoined[indexPath.row])
+                newButton.setImage(UIImage(systemName: "plus.square.fill"), for: .normal)
+                userJoined[indexPath.row] = true
+                print("user joined")
+                
                 // unjoin giveaway
             }
             

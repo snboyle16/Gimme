@@ -39,7 +39,7 @@ class Giveaway {
         giveawayData.likedUsers.append(userID)
         let giveawayRef = db.collection("giveaways").document(giveawayID)
         giveawayRef.updateData([
-            "likedUser": FieldValue.arrayUnion([userID])
+            "likedUsers": FieldValue.arrayUnion([userID])
         ])
     }
     
@@ -144,6 +144,10 @@ class Giveaway {
                 self.giveawayData.maxNumWinners = dataDescription!["maxNumWinners"] as! Int
                 self.giveawayData.donationAmount = dataDescription!["donationAmount"] as! Float
                 self.giveawayData.joinedUsers = dataDescription!["joinedUsers"] as! [String]
+//                let  likedUsers = dataDescription!["likedUsers"] as! [String]
+//                for like in likedUsers {
+//                    self.giveawayData.likedUsers.append(like)
+//                }
                 self.giveawayData.likedUsers = dataDescription!["likedUsers"] as! [String]
                 self.giveawayData.winners = dataDescription!["winners"] as! [String]
                 
