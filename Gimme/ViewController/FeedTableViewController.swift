@@ -18,9 +18,24 @@ class FeedTableViewController: UITableViewController {
     var numComments = [Int]()
     var userLiked  = [Bool]()
     var userJoined = [Bool]()
+    var giveaways_Following = [Giveaway]()
+    var giveaways_ForYou = [Giveaway]()
+    var images_Following = [UIImage]()
+    var images_ForYou = [UIImage]()
+    var numLikes_Following = [Int]()
+    var numLikes_ForYou = [Int]()
+    var numJoined_Following = [Int]()
+    var numJoined_ForYou = [Int]()
+    var numComments_Following = [Int]()
+    var numComments_ForYou = [Int]()
+    var userLiked_Following  = [Bool]()
+    var userLiked_ForYou  = [Bool]()
+    var userJoined_Following = [Bool]()
+    var userJoined_ForYou = [Bool]()
     let mySegmentedControl = UISegmentedControl(items: ["Following","For You"])
 
-    var firstLoadDone = false
+    var firstLoadDone_Following = false
+    var firstLoadDone_ForYou = false
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
@@ -61,7 +76,7 @@ class FeedTableViewController: UITableViewController {
 //            let feedData = currUser.feedData
 //            self.giveaways = feedData.giveaways
 //        }
-        firstLoadDone = true
+//        firstLoadDone = true
         updateFeed_Following()
 //        currUser = User(userID: currUserID!)
 
@@ -103,112 +118,125 @@ class FeedTableViewController: UITableViewController {
 //    }
     
     func updateFeed_Following() {
-        giveaways = []
-        images = []
-        numComments =  []
-        numLikes = []
-        numJoined = []
-        userLiked = []
-        userJoined = []
-        self.tableView.reloadData()
-        for userID in currUser!.userData.following {
-            let userRef = db.collection("users").document(userID)
-            userRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data()
-                    let giveawayIDs = dataDescription!["giveaways"] as! [String]
-                    for giveawayID in giveawayIDs {
-                        let giveaway = Giveaway(giveawayID: giveawayID)
-                        giveaway.readFromDB { giveawayData in
-                            var image: UIImage!
-                            let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
-                            storageRef.getData(maxSize: 4*400*400) {  (data,error) in
-                                
-                                if let data = data {
-                                    image = UIImage(data: data)
-                                    self.images.append(image)
-                                    self.giveaways.append(giveaway)
-                                    self.numLikes.append(giveaway.giveawayData.likedUsers.count)
-                                    self.numJoined.append(giveaway.giveawayData.joinedUsers.count)
-                                    self.numComments.append(giveaway.giveawayData.comments.count)
-                                    if (giveaway.giveawayData.joinedUsers.contains(currUser.userID)) {
-                                        self.userJoined.append(true)
+        if firstLoadDone_Following {
+            self.tableView.reloadData()
+            return
+        } else {
+            firstLoadDone_Following = true
+            giveaways_Following = []
+            images_Following = []
+            numComments_Following =  []
+            numLikes_Following = []
+            numJoined_Following = []
+            userLiked_Following = []
+            userJoined_Following = []
+            self.tableView.reloadData()
+            for userID in currUser!.userData.following {
+                let userRef = db.collection("users").document(userID)
+                userRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let dataDescription = document.data()
+                        let giveawayIDs = dataDescription!["giveaways"] as! [String]
+                        for giveawayID in giveawayIDs {
+                            let giveaway = Giveaway(giveawayID: giveawayID)
+                            giveaway.readFromDB { giveawayData in
+                                var image: UIImage!
+                                let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
+                                storageRef.getData(maxSize: 4*400*400) {  (data,error) in
+                                    
+                                    if let data = data {
+                                        image = UIImage(data: data)
+                                        self.images_Following.append(image)
+                                        self.giveaways_Following.append(giveaway)
+                                        self.numLikes_Following.append(giveaway.giveawayData.likedUsers.count)
+                                        self.numJoined_Following.append(giveaway.giveawayData.joinedUsers.count)
+                                        self.numComments_Following.append(giveaway.giveawayData.comments.count)
+                                        if (giveaway.giveawayData.joinedUsers.contains(currUser.userID)) {
+                                            self.userJoined_Following.append(true)
+                                        } else {
+                                            self.userJoined_Following.append(false)
+                                        }
+                                        if (giveaway.giveawayData.likedUsers.contains(currUser.userID)) {
+                                            self.userLiked_Following.append(true)
+                                        } else {
+                                            self.userLiked_Following.append(false)
+                                        }
+                                        self.tableView.reloadData()
                                     } else {
-                                        self.userJoined.append(false)
+                                        print(error!)
                                     }
-                                    if (giveaway.giveawayData.likedUsers.contains(currUser.userID)) {
-                                        self.userLiked.append(true)
-                                    } else {
-                                        self.userLiked.append(false)
-                                    }
-                                    self.tableView.reloadData()
-                                } else {
-                                    print(error!)
+                                    
                                 }
-                                
                             }
                         }
+                    } else {
+                        print("Document does not exist. inside FeedData class")
                     }
-                } else {
-                    print("Document does not exist. inside FeedData class")
                 }
             }
         }
+        
     }
     
     func updateFeed_ForYou() {
-        giveaways = []
-        images = []
-        numComments =  []
-        numLikes = []
-        numJoined = []
-        userLiked = []
-        userJoined = []
-        self.tableView.reloadData()
-        db.collection("giveaways").order(by: "username").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let dataDescription = document.data()
-                    let userID = dataDescription["userID"]  as? String
-                    if (userID != currUser.userID && !currUser.userData.following.contains(userID ?? "")) {
-                        let giveawayID = document.documentID
-                        let giveaway = Giveaway(giveawayID: giveawayID)
-                        giveaway.readFromDB { giveawayData in
-                            var image: UIImage!
-                            let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
-                            storageRef.getData(maxSize: 4*400*400) {  (data,error) in
-                                
-                                if let data = data {
-                                    image = UIImage(data: data)
-                                    self.images.append(image)
-                                    self.giveaways.append(giveaway)
-                                    self.numLikes.append(giveawayData.likedUsers.count)
-                                    self.numJoined.append(giveawayData.joinedUsers.count)
-                                    self.numComments.append(giveawayData.comments.count)
-                                    if (giveawayData.joinedUsers.contains(currUser.userID)) {
-                                        self.userJoined.append(true)
+        if firstLoadDone_ForYou {
+            self.tableView.reloadData()
+        } else {
+            firstLoadDone_ForYou = true
+            giveaways_ForYou = []
+            images_ForYou = []
+            numComments_ForYou =  []
+            numLikes_ForYou = []
+            numJoined_ForYou = []
+            userLiked_ForYou = []
+            userJoined_ForYou = []
+            self.tableView.reloadData()
+            db.collection("giveaways").order(by: "username").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let dataDescription = document.data()
+                        let userID = dataDescription["userID"]  as? String
+                        if (userID != currUser.userID && !currUser.userData.following.contains(userID ?? "")) {
+                            let giveawayID = document.documentID
+                            let giveaway = Giveaway(giveawayID: giveawayID)
+                            giveaway.readFromDB { giveawayData in
+                                var image: UIImage!
+                                let storageRef = storage.reference(withPath: "profile_pictures/\(giveaway.giveawayData.userID).png")
+                                storageRef.getData(maxSize: 4*400*400) {  (data,error) in
+                                    
+                                    if let data = data {
+                                        image = UIImage(data: data)
+                                        self.images_ForYou.append(image)
+                                        self.giveaways_ForYou.append(giveaway)
+                                        self.numLikes_ForYou.append(giveawayData.likedUsers.count)
+                                        self.numJoined_ForYou.append(giveawayData.joinedUsers.count)
+                                        self.numComments_ForYou.append(giveawayData.comments.count)
+                                        if (giveawayData.joinedUsers.contains(currUser.userID)) {
+                                            self.userJoined_ForYou.append(true)
+                                        } else {
+                                            self.userJoined_ForYou.append(false)
+                                        }
+                                        if (giveawayData.likedUsers.contains(currUser.userID)) {
+                                            self.userLiked_ForYou.append(true)
+                                        } else {
+                                            self.userLiked_ForYou.append(false)
+                                        }
+                                        self.tableView.reloadData()
                                     } else {
-                                        self.userJoined.append(false)
+                                        print(error!)
                                     }
-                                    if (giveawayData.likedUsers.contains(currUser.userID)) {
-                                        self.userLiked.append(true)
-                                    } else {
-                                        self.userLiked.append(false)
-                                    }
-                                    self.tableView.reloadData()
-                                } else {
-                                    print(error!)
+                                    
                                 }
-                                
                             }
                         }
+                        
                     }
-                    
                 }
             }
         }
+        
     }
     
     @objc func indexChanged(_ sender: UISegmentedControl) {
@@ -225,7 +253,13 @@ class FeedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (mySegmentedControl.selectedSegmentIndex == 0) {
+            self.giveaways = self.giveaways_Following
+        } else {
+            self.giveaways = self.giveaways_ForYou
+        }
         return giveaways.count
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -235,9 +269,9 @@ class FeedTableViewController: UITableViewController {
         
         performSegue(withIdentifier: "openComment", sender: self)
 //        let giveaway = giveaways[indexPath.row]
-        print(numLikes)
-        print(userLiked)
-        print("Double click")
+//        print(numLikes)
+//        print(userLiked)
+//        print("Double click")
     }
 
     
@@ -248,6 +282,23 @@ class FeedTableViewController: UITableViewController {
         let cell = Bundle.main.loadNibNamed("FeedPostTableViewCell", owner: self, options: nil)?.first as! FeedPostTableViewCell
         
 //        print(cell)
+        if (mySegmentedControl.selectedSegmentIndex == 0) {
+            giveaways = giveaways_Following
+            images = images_Following
+            numComments = numComments_Following
+            numLikes = numLikes_Following
+            numJoined = numJoined_Following
+            userLiked = userLiked_Following
+            userJoined = userJoined_Following
+        } else {
+            giveaways = giveaways_ForYou
+            images = images_ForYou
+            numComments = numComments_ForYou
+            numLikes = numLikes_ForYou
+            numJoined = numJoined_ForYou
+            userLiked = userLiked_ForYou
+            userJoined = userJoined_ForYou
+        }
         
         let gimme = giveaways[indexPath.row].giveawayData
         
@@ -285,16 +336,17 @@ class FeedTableViewController: UITableViewController {
         cell.numCommentLabel.textColor = .white
         cell.numLikeLabel.textColor = .white
         
+        
         cell.numJoinLabel.text = String(numJoined[indexPath.row])
         cell.numCommentLabel.text = String(numComments[indexPath.row])
         cell.numLikeLabel.text = String(numLikes[indexPath.row])
+        
         
         
         changeButtonImage(button: cell.commentButton, color: .white)
         changeButtonImage(button: cell.likeButton, color: .white)
         changeButtonImage(button: cell.shareButton, color: .white)
         changeButtonImage(button: cell.joinButton, color: .white)
-        
         
         if (userLiked[indexPath.row]) {
             cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -311,10 +363,6 @@ class FeedTableViewController: UITableViewController {
         } else {
             cell.joinButton.setImage(UIImage(systemName: "plus.square"), for: .normal)
         }
-            
-        
-        
-        
         
         
         //design cell
@@ -330,7 +378,13 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (mySegmentedControl.selectedSegmentIndex == 0) {
+            giveaways =  giveaways_Following
+        } else {
+            giveaways =  giveaways_ForYou
+        }
         let heightOfRow = self.calculateHeight(inString: giveaways[indexPath.row].giveawayData.caption)
+
         if (heightOfRow > 144) {
             return heightOfRow * (heightOfRow / 144)
         } else {
@@ -401,8 +455,13 @@ class FeedTableViewController: UITableViewController {
         if segue.identifier == "openComment" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let vc = segue.destination as! CommentViewController
-                print(giveaways[indexPath.row].giveawayData)
-                vc.giveaway = giveaways[indexPath.row]
+//                print(giveaways[indexPath.row].giveawayData)
+                if  (mySegmentedControl.selectedSegmentIndex == 0) {
+                    vc.giveaway = giveaways_Following[indexPath.row]
+                } else {
+                    vc.giveaway = giveaways_ForYou[indexPath.row]
+                }
+                
             }
         }
     }
@@ -412,6 +471,16 @@ extension FeedTableViewController: CustomCellDelegate {
     
     func customcell(cell: FeedPostTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = tableView.indexPath(for: cell) else  { return }
+    
+        if (mySegmentedControl.selectedSegmentIndex == 0) {
+            giveaways = giveaways_Following
+            userLiked = userLiked_Following
+            userJoined = userJoined_Following
+        } else {
+            giveaways = giveaways_ForYou
+            userLiked = userLiked_ForYou
+            userJoined = userJoined_ForYou
+        }
         let selectedGiveaway = self.giveaways[indexPath.row]
         let cell = tableView.cellForRow(at: indexPath) as? FeedPostTableViewCell
         let newButton = cell!.contentView.viewWithTag(button?.tag ?? -1) as! UIButton
@@ -424,14 +493,10 @@ extension FeedTableViewController: CustomCellDelegate {
             if (userLiked[indexPath.row]) {
                 numLikes[indexPath.row] -= 1
                 cell?.numLikeLabel.text = String(numLikes[indexPath.row])
-//                selectedGiveaway.addLikedUser(userID: currUser.userID)
-//                self.tableView.reloadData()
                 newButton.setImage(UIImage(systemName: "heart"), for: .normal)
                 changeButtonImage(button: newButton, color: .white)
                 userLiked[indexPath.row] = false
                 print("disliked")
-                
-                
                 
             } else {
                 currUser.likeGiveaway(giveawayID: selectedGiveaway.giveawayID)
@@ -443,6 +508,13 @@ extension FeedTableViewController: CustomCellDelegate {
                 userLiked[indexPath.row] = true
                 print("liked")
                 
+            }
+            if (mySegmentedControl.selectedSegmentIndex == 0) {
+                numLikes_Following[indexPath.row] = numLikes[indexPath.row]
+                userLiked_Following[indexPath.row] = userLiked[indexPath.row]
+            } else {
+                numLikes_ForYou[indexPath.row] = numLikes[indexPath.row]
+                userLiked_ForYou[indexPath.row] = userLiked[indexPath.row]
             }
         case 2:
             if (userJoined[indexPath.row]) {
@@ -462,6 +534,13 @@ extension FeedTableViewController: CustomCellDelegate {
                 print("user joined")
                 
                 // unjoin giveaway
+            }
+            if (mySegmentedControl.selectedSegmentIndex == 0) {
+                numJoined_Following[indexPath.row] = numJoined[indexPath.row]
+                userJoined_Following[indexPath.row] = userJoined[indexPath.row]
+            } else {
+                numJoined_ForYou[indexPath.row] = numJoined[indexPath.row]
+                userJoined_ForYou[indexPath.row] = userJoined[indexPath.row]
             }
             
             
