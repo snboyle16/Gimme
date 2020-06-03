@@ -491,6 +491,7 @@ extension FeedTableViewController: CustomCellDelegate {
         case 1:
             
             if (userLiked[indexPath.row]) {
+                selectedGiveaway.removeLikedUser(userID: currUser.userID)
                 numLikes[indexPath.row] -= 1
                 cell?.numLikeLabel.text = String(numLikes[indexPath.row])
                 newButton.setImage(UIImage(systemName: "heart"), for: .normal)
@@ -499,7 +500,7 @@ extension FeedTableViewController: CustomCellDelegate {
                 print("disliked")
                 
             } else {
-                currUser.likeGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                selectedGiveaway.addLikedUser(userID: currUser.userID)
                 numLikes[indexPath.row] += 1
                 cell?.numLikeLabel.text = String(numLikes[indexPath.row])
 //                self.tableView.reloadData()
@@ -518,6 +519,8 @@ extension FeedTableViewController: CustomCellDelegate {
             }
         case 2:
             if (userJoined[indexPath.row]) {
+                currUser.disjoinGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                selectedGiveaway.removeJoinedUser(userID: currUser.userID)
                 numJoined[indexPath.row] -= 1
                 cell?.numJoinLabel.text = String(numJoined[indexPath.row])
 //                self.tableView.reloadData()
@@ -527,6 +530,7 @@ extension FeedTableViewController: CustomCellDelegate {
                 
             } else {
                 currUser.joinGiveaway(giveawayID: selectedGiveaway.giveawayID)
+                selectedGiveaway.addJoinedUser(userID: currUser.userID)
                 numJoined[indexPath.row] += 1
                 cell?.numJoinLabel.text = String(numJoined[indexPath.row])
                 newButton.setImage(UIImage(systemName: "plus.square.fill"), for: .normal)

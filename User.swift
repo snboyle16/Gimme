@@ -47,9 +47,6 @@ class User {
     }
     
     func joinGiveaway(giveawayID: String) {
-        let gimme = Giveaway(giveawayID: giveawayID)
-        gimme.addJoinedUser(userID: self.userID)
-        
         userData.joinedGimmes.append(giveawayID)
         //update database
         let userRef = db.collection("users").document(userID)
@@ -58,10 +55,13 @@ class User {
         ])
     }
     
-    func likeGiveaway(giveawayID: String) {
-        let gimme = Giveaway(giveawayID: giveawayID)
-        gimme.addLikedUser(userID: self.userID)
+    func disjoinGiveaway(giveawayID: String) {
+        userData.joinedGimmes = userData.joinedGimmes.filter(){$0 != giveawayID}
+        self.addTodb(completion: {})
+        //update database
+        
     }
+    
     
     func addComment(giveawayID: String, commentText: String) {
         let giveaway = Giveaway(giveawayID: giveawayID)

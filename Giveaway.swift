@@ -35,12 +35,22 @@ class Giveaway {
         ])
     }
     
+    func removeJoinedUser(userID: String) {
+        giveawayData.joinedUsers = giveawayData.joinedUsers.filter() {$0 != userID}
+        self.addTodb()
+    }
+    
     func addLikedUser(userID: String) {
         giveawayData.likedUsers.append(userID)
         let giveawayRef = db.collection("giveaways").document(giveawayID)
         giveawayRef.updateData([
             "likedUsers": FieldValue.arrayUnion([userID])
         ])
+    }
+    
+    func removeLikedUser(userID: String) {
+        giveawayData.likedUsers = giveawayData.likedUsers.filter(){$0 != userID}
+        self.addTodb()
     }
     
     
